@@ -23,7 +23,10 @@
 	}
 }
 
-@include susy-breakpoint($desktop, $desktop-columns) {
+@include layout-use(L up) {
+    @include type-base($base__font-size, $base__line-height);
+    
+  
 	.l-main-menu-wrapper {
 		flex: 1 0 auto;
 		padding-top: 0;

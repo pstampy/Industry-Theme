@@ -4,7 +4,8 @@
 	margin-bottom: $small-spacing;
 }
 
-@include susy-breakpoint($desktop, $desktop-columns) {
+@include layout-use(M up) {
+    @include type-base($base__font-size, $base__line-height);
 	.pane-ministers-panel-pane-1 {
 		margin-bottom: $base-spacing;
 	}

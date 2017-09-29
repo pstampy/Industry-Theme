@@ -6,7 +6,10 @@
 	border-bottom: 1px solid $medium-gray;
 }
 
-@include susy-breakpoint($desktop, $desktop-columns) {
+@include layout-use(L up) {
+    @include type-base($base__font-size, $base__line-height);
+    
+  
 	.l-header-bottom {
 		@include bleed;
 		@include clearfix;

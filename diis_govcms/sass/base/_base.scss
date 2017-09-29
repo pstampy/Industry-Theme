@@ -2,8 +2,10 @@
 // http://bitters.bourbon.io
 // Copyright 2013-2015 thoughtbot, inc.
 // MIT License
+@import "colours";
 
 @import "variables";
+
 
 @import "buttons";
 @import "forms";
@@ -12,3 +14,4 @@
 @import "media";
 @import "tables";
 @import "typography";
+

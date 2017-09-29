@@ -4,7 +4,10 @@
 	margin-bottom: $small-spacing;
 }
 
-@include susy-breakpoint($desktop, $desktop-columns) {
+@include layout-use(M up) {
+    @include type-base($base__font-size, $base__line-height);
+    
+  
 	.easy-breadcrumb {
 		margin-bottom: $base-spacing;
 	}

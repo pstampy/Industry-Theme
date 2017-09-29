@@ -1,25 +1,59 @@
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-// Layout
-
-$susy: (
-	container: 960px,
+// Layout settings 
+$layouts: (
+  default: (
+    susy: (
+      flow: ltr,
+      math: fluid,
+      output: float,
+      gutter-position: after,
+      container: auto,
+      container-position: center,
+      columns: 4,
+      gutters: .25,
+      column-width: false,
+      global-box-sizing: border-box,
+      last-flow: to,
+      debug: (
+        image: hide,
+        color: rgba(#66f, .25),
+        output: background,
+        toggle: top right,
+      ),
+      use-custom: (
+        background-image: true,
+        background-options: false,
+        box-sizing: true,
+        clearfix: false,
+        rem: true,
+      )
+    ),
+    base: (
+      base__font-size: 14px,
+      base__line-height: 18px
+    )
+  ),
+  M: (
+    susy: (
+      columns: 8
+    ),
+    base: (
+      base__font-size: 18px,
+      base__line-height: 24px
+    ),
+    container: (
+      max-width: 1200px,
+      min-width: 801px
+    )
+  ),
+  L: (
+    extends: M,
+    susy: (
+      columns: 12
+    ),
+    container: (
+      min-width: 1201px
+    )
+  )
 );
-
-$tablet: 784px;
-$desktop: 976px;
-
-$tablet-columns: 12;
-$desktop-columns: 12;
-
-.l-page {
-	@include container;
-}
+// set up and initialize layout tools 
+@include layout-init($layouts);

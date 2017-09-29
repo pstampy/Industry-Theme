@@ -6,6 +6,7 @@ import browser  from 'browser-sync';
 import gulp     from 'gulp';
 import yaml     from 'js-yaml';
 import fs       from 'fs';
+import sass_loader from 'sass-loader';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -24,6 +25,8 @@ function loadConfig() {
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default', gulp.series(sass, server, watch));
+
+
 
 // Compile Sass into CSS
 // In production, the CSS is compressed
@@ -49,7 +52,8 @@ function sass() {
 // Start a server with BrowserSync to preview the site in
 function server(done) {
   browser.init({
-    proxy: "localhost/govcms-7.x-2.14/"
+    proxy: "localhost/govcms-7.x-2.14/",
+    browser: "google-chrome"
   });
   done();
 }
@@ -59,3 +63,5 @@ function watch() {
   gulp.watch('./sass/**/*.scss', sass);
   gulp.watch('./templates/**/*.*', browser.reload);
 }
+
+

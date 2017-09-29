@@ -8,20 +8,11 @@
 }
 
 
-@include susy-breakpoint($tablet, $tablet-columns) {
-	.content-wrapper {
-		@include clearfix;
-	}
-	.main-content {
-		@include span(first $tablet-columns / $tablet-columns * 8 of $tablet-columns);
-		&.no-sidebar {
-			@include span(full);
-		}
-	}
-	.sidebar-right {
-		@include span(last $tablet-columns / $tablet-columns * 4 of $tablet-columns);
-		padding: $small-spacing;
-	}
+@include layout-use(M up) {
+    @include type-base($base__font-size, $base__line-height);
+    
+  
+	
 }
 
 

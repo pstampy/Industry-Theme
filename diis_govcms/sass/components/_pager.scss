@@ -19,7 +19,10 @@
 	}
 }
 
-@include susy-breakpoint($desktop, $desktop-columns) {
+@include layout-use(L up) {
+    @include type-base($base__font-size, $base__line-height);
+    
+  
 	.pager {
 		margin-bottom: $base-spacing / 2 !important;
 		.pager-current {

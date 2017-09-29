@@ -24,35 +24,24 @@
 	}
 }
 
-@include susy-breakpoint($tablet, $tablet-columns) {
+@include layout-use(M up) {
+    @include type-base($base__font-size, $base__line-height);
+    
+  
 	.l-top-menu-wrapper {
 		@include clearfix;
 		.menu-wrapper {
-			@include span($tablet-columns / 2 of $tablet-columns);
-			&.left {
-				@include first;
-				border-bottom: none;
-				.menu {
-					justify-content: flex-start;
-					li {
-						margin-right: $small-spacing;
-					}
-				}
-			}
-			&.right {
-				@include last;
-				.menu {
-					justify-content: flex-end;
-					li {
-						margin-left: $small-spacing;
-					}
-				}
-			}
+			@include layout-use(M) ;
+		
+			
 		}
 	}
 }
 
-@include susy-breakpoint($desktop, $desktop-columns) {
+@include layout-use(L up) {
+    @include type-base($base__font-size, $base__line-height);
+    s
+ 
 	.l-top-menu-wrapper {
 		@include bleed;
 	}

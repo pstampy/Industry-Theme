@@ -20,7 +20,10 @@
 	}
 }
 
-@include susy-breakpoint($desktop, $desktop-columns) {
+@include layout-use(L up) {
+    @include type-base($base__font-size, $base__line-height);
+    
+  
 	.l-search-wrapper {
 		flex: 0 1 auto;
 		margin: 0;
