@@ -1,0 +1,5 @@
+.element-invisible.element-focusable:active, .element-invisible.element-focusable:focus {
+	position: absolute !important;
+	top: 100px;
+	left: 10px;
+}

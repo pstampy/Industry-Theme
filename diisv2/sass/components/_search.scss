@@ -1,0 +1,142 @@
+$box-size: 30px;
+.page-search {
+	h3 {
+		a {
+			border-bottom: none;
+		}
+	}
+	.pager {
+		text-align: right;
+	}
+	.form-wrapper {
+		display: flex;
+		align-items: flex-end;
+		label {
+			flex-basis: 100%;
+		}
+		.form-item {
+			margin: 0;
+		}
+		input {
+			&.form-text {
+				flex: 1 0 auto;
+				height: 100%;
+				margin-bottom: 0;
+			}
+			&.form-submit {
+					@include hide-text;
+					text-indent: 200%;
+					flex: 0 1 auto;
+					padding: 0;
+					height: 35px;
+					width: 35px;
+					background: url('../images/search.png'), $corporate-secondary-1;
+					background-repeat: no-repeat;
+					background-position: 50% 50%;
+					background-size: 25px 25px;
+				}
+			}
+	}
+	
+}
+.l-search-wrapper {
+	position: absolute;
+	top: 9px;
+	right: 14px;
+	z-index: 1000002;
+	border-radius: 3px;
+	box-shadow: 0px 0px 6px 1px $light-black;
+	.search-block-form {
+		margin: 0;
+		padding: 0;		
+		> div {
+			width: 100%;
+		}
+		* {
+			height: $box-size;
+		}
+		.container-inline {
+			div {
+				display: inline-block;
+			}
+			.form-item,
+			.form-actions {
+				input,
+				input.form-submit {
+					border-radius: 0;
+					border: none;
+				}
+				.form-text {
+					font-size: 14px;
+					line-height: 100%;
+					&::-webkit-input-placeholder {
+					   font-size: 14px;
+					   color: $dark-grey;
+					}
+					&:-moz-placeholder { /* Firefox 18- */
+					   font-size: 14px;
+					   color: $dark-grey;
+					}
+					&::-moz-placeholder {  /* Firefox 19+ */
+					   font-size: 14px;
+					   color: $dark-grey;
+					}
+					&:-ms-input-placeholder {  
+					   font-size: 14px; 
+					   color: $dark-grey;
+					}
+				}
+			}
+			.form-item {
+				input {
+					background: $white;
+					color: $dark-grey;
+					font-size: $base-font-size;
+					width: 93px;
+    				transition: all .4s ease-in-out;
+    				margin-right: -5px;
+    				border-radius: 3px 0 0 3px;
+    				-webkit-appearance:none;
+    				::placeholder {
+						color: $dark-grey;
+					}
+					&:focus {
+						width: 200px;
+						color: $dark-grey;
+						background: $white;
+						::placeholder {
+							color: $dark-grey;
+						}
+					}
+				}
+				label {
+					display: none;
+				}
+			}
+			.form-actions {
+				width: $box-size;
+				z-index: 2;
+				vertical-align: top;
+				border: 1px solid $white;
+				border-radius: 0 3px 3px 0;
+				input,
+				input.form-submit {
+					@include hide-text;
+					text-indent: 200%;
+					padding: 0;
+					height: 100%;
+					width: 100%;
+					border-radius: 0 5px 5px 0;
+					background: url('../images/search.png'), $corporate-secondary-1;
+					background-repeat: no-repeat;
+					background-position: 50% 50%;
+					background-size: 15px 15px;
+				}
+			}
+		}
+	}
+}
+
+@include breakpoint (tablet) {
+
+}

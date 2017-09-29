@@ -1,0 +1,243 @@
+.node-type-news-article {
+	.l-content {
+		padding: $all-round;
+		img {
+			padding: $vert-spacing-unit 0;
+			margin: 0 auto;
+			display: block;
+			height: auto;
+			max-height: 360px;
+		}
+		.caption {
+			color: $corporate-primary-1;
+			font-size: $base-font-size * 0.8;
+		}
+		
+	}
+}
+.page-news {
+	.view-news {
+		.view-content {
+			display: flex;
+			flex-wrap: wrap;
+			.news-item {
+				flex: 0 1 100%;
+				img {
+					float: none;
+					padding: 0 0 $horz-spacing-unit 0;
+					margin: 0 auto;
+					width: 100%;
+					max-width: 350px;
+				}
+				a {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+}
+.latest-news {
+	background-color: $light-grey;
+  	h2{
+  		padding: $vert-spacing-unit $horz-spacing-unit 0;
+  	}
+  	.flexslider {
+  		border: none;
+  		margin: 0;
+  		padding: 0 $horz-spacing-unit $vert-spacing-unit $horz-spacing-unit;
+  		background-color: $light-grey;
+  		overflow: hidden;
+  		img {
+  			max-width: 550px;
+  			margin: 0 auto;
+  		}
+  		ul.slides {
+  			padding: 0;
+  		}
+  	}
+
+ 	.view-news-slider {
+  		text-align: left;
+  		h3, .date {
+  			margin: 0;
+  		}
+  		.accordion-header {
+  			position: relative;
+  		}
+  		.active {
+  			padding: $vert-spacing-unit $horz-spacing-unit 0;
+  			.accordion-control {
+  				height: 0;
+  				width: 0;
+  			}
+  			h3 {
+  				margin-bottom: $small-spacing;
+  			a, a:focus {
+  				color: $corporate-primary-2;
+	  			&:hover {
+	  				color:$corporate-secondary-1;
+	  			}
+  			}
+  			}
+  		}
+  		.inactive {
+  			position: relative;
+  			background-color: $dark-grey;
+  			margin-top: 1px;
+  			transition: background-color $base-duration * 2 ease;
+  			&:hover {
+  				background-color: $corporate-secondary-1;
+  			}
+  			.accordion-control {
+  				position: absolute;
+  				width: 100%;
+  				height: 100%;
+  				z-index: 25;
+  				&:hover {
+  					cursor: pointer;
+  				}
+  			}
+  			a {
+  				display: block;
+  				width: 100%;
+  				height: 100%;  			}
+  			.date, h3 a {
+  				color: $white;
+  			}
+  			.date {
+  				padding: $vert-spacing-unit $horz-spacing-unit 0;
+  			}
+  			h3 {
+  				padding: 0 $horz-spacing-unit $vert-spacing-unit;
+  			}
+  		}
+  	}
+ 	.view-footer {
+ 	 	& > p {
+ 	 		margin-bottom: 0;
+ 	 		.button {
+ 	 			width: 100%;		
+ 	 		}
+ 	 	}
+ 	}
+ 
+}
+@include breakpoint(tablet) {
+	.node-type-news-article {
+		.l-content {
+			img {
+				float: right;
+				padding: $all-round;
+			}
+		}
+	}
+	.page-news {
+		.view-news {
+			.view-content {
+				.news-item {
+					flex: 0 1 32%;
+					margin: 0 0.5%;
+				}
+			}
+		}
+	}
+}
+@include breakpoint(desktop) {
+	.page-news {
+		.view-news {
+			.view-content {
+				.news-item {
+					flex: 0 1 24%;
+				}
+			}
+		}
+	}
+	.latest-news {
+		background-color: $white;
+		margin-bottom: $vert-spacing-unit;
+		.flexslider {
+			height: 100%;
+			ul.slides {
+				height: 100%;
+				list-style: none;
+    			padding-left: 0;
+    			padding-bottom: 0;
+				li {
+					height: 100%;
+					.views-field {
+						height: 100%;
+						.field-content {
+							height: 100%;
+							img {
+								max-width: none;
+								height: 100%;
+								border-radius: 0;
+								margin: 0;
+							}
+						}
+					}
+				}			
+			}	
+		}
+		& > .view-news-slider {
+			display: flex;
+			& > .view-content {
+				order: 2;
+				flex: 1 0 65%;
+				height: 100%; //DON'T REMOVE
+				.flexslider {
+					padding: 0;
+					border-radius: 0;
+				}
+			}
+			& > .view-footer {
+				order: 1;
+				flex: 1 0 35%;
+				h3.header a {
+					height: 25.92px;
+					line-height: 25.92px;
+					overflow: hidden;
+					position: relative;
+				}
+				.inactive {
+					&:first-child {
+						margin-top: 0;
+					}
+				}
+				.active {
+					background-color: $light-grey;
+					height: 142px;
+					position: relative;
+					h3 {
+						margin-bottom: 0;
+					}
+					&:after {
+						content: '';
+						width: 0; 
+  						height: 0; 
+  						border-top: 20px solid transparent;
+  						border-bottom: 20px solid transparent; 
+  						border-left: 20px solid $light-grey; 
+  						position: absolute;
+  						left: 100%;
+  						z-index: 20;
+  						top: 5%;
+					}
+				}
+				.accordion-header {
+					font-size: $base-font-size * 0.9;
+				}
+				.accordion-content {
+					font-size: $base-font-size * 0.85;
+				}
+			}
+		}
+		.view-footer {
+	 	 	& > p {
+	 	 		.button {
+	 	 			border-radius: 1.5px 0 0 1.5px;
+	 	 		}
+	 	 	}
+		}
+	}
+}

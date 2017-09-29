@@ -1,0 +1,53 @@
+.l-branding {
+	background-color: $light-grey;
+	text-align: center;
+	clear: both;
+	.logo {
+		width: 100%;
+		img {
+			width: 122px;
+			margin: $horz-spacing-unit 0;
+		}
+	}
+	h1 {
+		padding: 0 $vert-spacing-unit $horz-spacing-unit;
+		margin: 0;
+		font-weight: 500;
+		font-size: $base-font-size * 1.8;
+		a {
+			color: $heading-font-color;
+			&:hover {
+				color: $heading-font-color;
+			}
+		}
+	}
+}
+@include breakpoint(tablet) {
+	.l-branding {
+		background-color: $white;
+		margin: $all-round;
+		height: 100px;
+		display: flex;
+		align-items: center;
+		.logo {
+			width: 150px;
+			border-right: 1px solid $grey;
+			padding-right: $vert-spacing-unit;
+			img {
+				margin: 0;
+			}
+		}
+		.site-name {
+			text-align: left;
+			h1 {
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+@include breakpoint(desktop) {
+	.l-branding-wrapper {
+		width: 960px;
+		margin: 0 auto;
+	}
+}

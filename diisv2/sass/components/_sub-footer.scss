@@ -1,0 +1,53 @@
+.sub-footer-wrapper {
+	background-color: $dark-grey;
+	width: 100%;
+	ul {
+		text-align: center;
+		padding: $all-round;
+		li {
+			display: block;
+			&.leaf {
+				list-style-image: none;
+				list-style-type: none;
+			}
+			a {
+				color: $white;
+				margin: 0.1rem;
+				font-size: $base-font-size * 0.8;
+				border-bottom: 1px solid transparent;
+				&:hover, &:focus {
+					border-bottom: 1px dotted $white;
+				}
+				
+			}
+		}
+	}
+	.rap {
+		color: $white;
+		margin: 0 auto;
+		font-size: $base-font-size * 0.8;
+		max-width: 960px;
+		padding: 0 $horz-spacing-unit $vert-spacing-unit $horz-spacing-unit;
+	}
+}
+@include breakpoint(tablet) {
+	.sub-footer-wrapper {
+		ul {
+			padding: 0;
+			li {
+				display: inline;
+				line-height: 50px;				
+				&:after {
+					content: '\000B7';
+					color: $mid-grey;
+					padding-left: 0.35rem; 
+				}
+				&.last {
+					&:after {
+						content: none;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,54 @@
+.subscribe {
+    text-align: center;
+    padding: $vert-spacing-unit $horz-spacing-unit * 2;
+    width: 100%;
+    form {
+        display: flex;
+        flex: nowrap;
+        .fields {
+            display: flex;
+            justify-content: center;
+            input {
+                border: 1px solid $grey;
+                border-radius: 0;
+                -webkit-appearance: none;
+                border-radius: 0;
+                &[type='email'] {
+                    width: 300px;
+                    height: 38px;
+                    margin-right: -114.5px;
+                    padding-right: 120px;
+                }
+                &[type='submit'] {
+                    font-size: 16px;
+                    padding: $vert-spacing-unit / 2 $horz-spacing-unit / 2;
+                    margin: 0.15rem 0.05rem 0 0;
+                    border-radius: 0 3px 3px 0;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint(tablet) {
+    .subscribe {
+        margin: 0 auto;
+        width: 700px;
+    }
+}
+
+@include breakpoint(mobile) {
+    .subscribe {
+        form {
+            .fields {
+                input {
+                    &[type='email'] {
+                        width: 100%;
+                        margin-right: 0;
+                        padding-right: $horz-spacing-unit / 2;
+                    }
+                }
+            }
+        }
+    }
+}
