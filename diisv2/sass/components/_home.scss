@@ -1,124 +1,83 @@
-.front {
-	text-align: center;
-	.l-content {
-		padding: 0;
-		a {
-			border-bottom: none;
-			&:hover {
-				h3 {
-					color: $corporate-secondary-1;
-				}
-				img {
-					opacity: 1.0;
-				}
-				.button {
-					background-color: $corporate-accent-1;
-					color: $black;
-				}
-			}
-		}
-	
-		h3 {
-			font-size: $base-font-size * 1.5;
-			transition: color $base-duration ease;
-		}
-		img {
-			padding: 0;
-			width: 100%;
-			height: auto;
-			float: none;
-			opacity: 0.9;
-			transition: opacity $base-duration ease;
-			backface-visibility: hidden;
-		}
-		.quad-box {
-			padding: 0 $horz-spacing-unit;
-			.view-content {
-					display: flex;
-					flex-wrap: wrap;
-					justify-content: space-between;
-					.need-to-know {
-						flex: 0 1 49%;
-						padding-bottom: $horz-spacing-unit;
-						display: flex;
-						flex-wrap: wrap;
-						justify-content: center;
-						.button {
-							align-self: flex-end;
-						}			
-					}
-			}
-		}
-		.lifecycle {
-			background-color: $light-grey;
-			padding: $all-round;
-			margin: $vert-spacing-unit 0;
-			border: 1px solid $grey;
-			border-left: none;
-			border-right: none;
-		}
-		.tri-box {
-			padding: $vert-spacing-unit $horz-spacing-unit 0 $horz-spacing-unit;
-			.view-content {
-				display: flex;
-				flex-wrap: wrap;
-				flex-direction: column;
-				justify-content: space-between;
-				.tri-box-item {
-					flex: 0 1 auto;
-					margin: 0 auto;
-					.button {
-						margin-top: -15px;
-						opacity: 0.99;
-					}
-				}
-			}
-		}
-	}
+.quad-box {
+  padding: 0 $horz-spacing-unit;
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .need-to-know {
+      border: 2px solid black;
+      padding: 1em;
+      margin-bottom:2em;
+      flex: 0 1 100%;
+      padding-bottom: $horz-spacing-unit;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+       align-self: flex-end;
+      .button {
+        align-self: flex-end;
+      }
+    }
+  }
 }
+
+
+
+
+//tablet
 @include breakpoint(tablet) {
-	.front {
-		.l-content {
-			.quad-box {
-				.view-content {
-					flex-wrap: nowrap;
-					.need-to-know {
-						flex: 0 1 24%;
-					}
-				}
-			}
-			.tri-box {
-				.view-content {
-					flex-wrap: nowrap;
-					flex-direction: row;
-					.tri-box-item {
-						flex: 0 1 32%;
-					}
-				}
-			}
-		}
-	}
+
+  .quad-box {
+    padding: 0 $horz-spacing-unit;
+    .view-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .need-to-know {
+        flex: 0 1 49%;
+        padding-bottom: $horz-spacing-unit;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .button {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
 }
+
+
+
+//desktop
 @include breakpoint(desktop) {
-	.front {
-		text-align: center;
-		.l-content {
-			.lifecycle {
-				border: 1px solid $grey;
-			}
-		}
-	}
+  .quad-box {
+    padding: 0 $horz-spacing-unit;
+    .view-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .need-to-know {
+        flex: 0 1 30%;
+        padding-bottom: $horz-spacing-unit;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .button {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
 }
+
+
 @include breakpoint(mobile) {
-	.front {
-		.l-content {
-			.quad-box {
-				.view-content {
-					.need-to-know {
-						flex: 0 1 auto;
-					}					
-				}
-			}
-		}
-	}
+  .quad-box {
+    .view-content {
+      .need-to-know {
+        flex: 0 1 auto;
+      }
+    }
+  }
 }

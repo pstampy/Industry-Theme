@@ -1,7 +1,7 @@
 // Footer
 
 .l-footer {
-	background-color: $bluebar-color;
+	background-color: $dark-gray;
 	font-size: 85%;
 	color: $white;
 }
@@ -48,14 +48,24 @@
 	font-size: 90%;
 }
 
-@include layout-use(M up) {
-
+@include susy-breakpoint($tablet, $tablet-columns) {
+	.footer-block {
+		flex: 0 0 48%;
+		h2 {
+			font-size: $base-font-size * 1.2;
+		}
+		li {
+			margin-bottom: $small-spacing / 2;
+		}
+	}
+	.l-copyright {
+		.block__content {
+			text-align: left;
+		}
+	}
 }
 
-/*@include layout-use(L up) {
-    @include type-base($base__font-size, $base__line-height);
-    @include breakpoint;
-  
+@include susy-breakpoint($desktop, $desktop-columns) {
 	.l-footer {
 		@include bleed;
 	}
@@ -67,14 +77,4 @@
 	.l-copyright {
 		@include bleed;
 	}
-}*/
-
- @include layout-use(L) {
-      // retrieve font size and line height from new layout context 
-      $text__font-size: layout-get(section, text__font-size);
-      $text__line-height: layout-get(section, text__line-height);
-      @include type-context($text__font-size, $text__line-height) {
-        padding: list-px-to-em((30px 20px 40px), $local__font-size);
-      }      
-    }
-
+}
