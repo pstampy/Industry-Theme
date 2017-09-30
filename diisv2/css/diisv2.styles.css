@@ -1188,7 +1188,7 @@ a.back-to-top {
   height: 60px;
   bottom: 20px;
   right: 20px;
-  background: green url("/images/uparrow.png") no-repeat center 43%;
+  background: green url("../images/uparrow.png") no-repeat center 43%;
   text-indent: -9999px;
   border-radius: 30px; }
 
