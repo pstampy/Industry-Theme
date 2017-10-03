@@ -1,0 +1,44 @@
+// Breadcrumbs
+.l-main {
+	.breadcrumb {
+		@include margin(0);
+		@include padding(14px $horz-white-spacing-unit);
+		font-weight: 100;
+		text-transform: uppercase;
+		@extend %black;
+	    line-height: $base-font-size * 2.3;
+		li {
+			display: inline-block;
+			margin: 0;
+			font-size: $base-font-size * 1.3;
+			a {
+				font-weight: 100;
+				color: $white;
+				border-bottom: none;
+				text-decoration: underline;
+			}
+			&:after {
+				content: '\00a0/\00a0';
+			}
+			&:last-child:after {
+				content: '';
+			}
+		}
+	}
+}
+.l-main {
+	.breadcrumb {
+		//@include margin(1px null $vert-spacing-unit null);
+	}
+}
+
+
+@include breakpoint(tablet) {
+	.section-theme {
+		.l-main {
+			.breadcrumb {
+
+			}
+		}
+	}
+}

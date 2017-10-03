@@ -1,0 +1,24 @@
+// Phone numbers
+
+.l-content {
+	.desktop {
+		display: none;
+		visibility: hidden;
+	}
+	.mobile {
+		text-decoration: underline;
+	}
+}
+
+@include breakpoint(tablet) {
+	.l-content {
+		.mobile {
+			display: none;
+			visibility: hidden;
+		}
+		.desktop {
+			display: inline;
+			visibility: visible;
+		}
+	}
+}

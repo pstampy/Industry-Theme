@@ -1,0 +1,1 @@
+!function($){Drupal.behaviors.nisaSortActive={attach:function(){$(".related-information .bef-select-as-links .form-type-bef-link:has(.active)").addClass("highlight")}}}(jQuery);

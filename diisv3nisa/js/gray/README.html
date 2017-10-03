@@ -1,0 +1,91 @@
+<h1 id="gray">gray</h1>
+<p><img src="https://img.shields.io/bower/v/gray.svg?style=flat" alt="Bower version"></p>
+<p>Make an image gray in all browsers.</p>
+<h4 id="-demo-http-work-karlhorky-com-gray-"><a href="http://work.karlhorky.com/gray/">Demo</a></h4>
+<p>Support:</p>
+<ul>
+<li>IE 6-9</li>
+<li>IE 10-11, Edge 12 (with polyfill)</li>
+<li>Firefox 10+, Firefox on Android</li>
+<li>Chrome 19+, Chrome for Android 25+</li>
+<li>Android Browser 4.4+</li>
+<li>Safari 6+, Safari iOS 6+</li>
+<li>Opera 15+, Opera Mobile 16+</li>
+<li>BlackBerry Browser 10+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>You can install with <a href="http://bower.io">Bower</a>:</p>
+<pre><code class="lang-shell">bower install --save gray
+</code></pre>
+<p>Or use the CDN links:</p>
+<pre><code>//cdn.jsdelivr.net/jquery.gray/1.4.5/gray.min.css
+//cdn.jsdelivr.net/jquery.gray/1.4.5/jquery.gray.min.js
+</code></pre><p>Or you can just <a href="https://github.com/karlhorky/gray/archive/gh-pages.zip">download</a> it.</p>
+<h2 id="how-to-use">How to Use</h2>
+<ol>
+<li>Add the CSS from <a href="https://github.com/karlhorky/gray/blob/gh-pages/css/gray.css">gray.css</a>.</li>
+<li><p>Add the plugin after jQuery at the bottom of the body.</p>
+<pre><code class="lang-html"> &lt;script src=&quot;/js/jquery.gray.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p> The plugin automatically initializes for all elements with a class of <code>grayscale</code>.</p>
+<p> The plugin can also be called manually with:</p>
+<pre><code class="lang-javascript"> $(&#39;.my-grayscale-class&#39;).gray();
+</code></pre>
+<p> The effect can be toggled with the <code>grayscale-off</code> class:</p>
+<pre><code class="lang-javascript"> $(&#39;.grayscale&#39;).toggleClass(&#39;grayscale-off&#39;);
+</code></pre>
+</li>
+<li><p>Add your image with a class of <code>grayscale</code>.</p>
+<pre><code class="lang-html"> &lt;img src=&quot;/img/color.jpg&quot; class=&quot;grayscale&quot;&gt;
+</code></pre>
+<p> Images with CSS background-image, background-size and (numeric) background-position are also supported:</p>
+<pre><code class="lang-html"> &lt;div style=&quot;
+   background-image   : url(/img/color-sprite-lg.jpg);
+   background-size    : auto 72px;
+   background-position: -180px 0;
+   display            : inline-block;
+   width              : 180px;
+   height             : 72px;
+ &quot; class=&quot;grayscale&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p> Non-numeric background-size (cover, contain, ...) and background-position (center, ...) are not currently supported (pull requests welcome!).</p>
+</li>
+<li><p>(Optional) Add class of <code>grayscale-fade</code> if you want transitioning from grayscale back to color on hover</p>
+<pre><code class="lang-html"> &lt;img src=&quot;/img/color.jpg&quot; class=&quot;grayscale grayscale-fade&quot;&gt;
+</code></pre>
+</li>
+<li><p>Revel in your absolute and utter awesomeness.</p>
+</li>
+</ol>
+<h2 id="caveats">Caveats</h2>
+<p>Non-numeric background-size (cover, contain, ...) and background-position (center, ...) are not currently supported.</p>
+<p>Colored borders will be also converted to grayscale in non-polyfill browsers. To also convert to grayscale in polyfill browsers, the class <code>grayscale-replaced</code> can be used:</p>
+<pre><code class="lang-css">.grayscale-replaced {
+  border-color: #494949 !important;
+}
+</code></pre>
+<h2 id="how-it-works">How it Works</h2>
+<p>In <a href="http://caniuse.com/#feat=css-filters">browsers that support css filters</a>, the styles in <code>gray.css</code> will use CSS filters to turn the image gray.</p>
+<p>The <code>jquery.gray</code> plugin uses the <code>Modernizr._prefixes</code>, <code>css-filters</code>, <code>Inline SVG</code> and <code>svg-filters</code> feature detects from Modernizr to determine browser support. If a browser supports inline SVG and SVG filters but not CSS filters, the plugin replaces the elements with SVG elements with filters.</p>
+<h2 id="changelog">Changelog</h2>
+<ul>
+<li>v1.4.5: Fix sizing of img tags with padding</li>
+<li>v1.4.4: Fix bug with missing padding properties with background images</li>
+<li>v1.4.3: Fix bug with padding on img tag</li>
+<li>v1.4.2: Add Firefox 35+ support, normalize cross-browser rendering</li>
+<li>v1.4.1: Fix bug with <code>display: none</code> on parents</li>
+<li>v1.4.0: Add support for programmatic toggling of grayscale</li>
+<li>v1.3.6: Fix image size with resized img tag and grayscale-fade in polyfill</li>
+<li>v1.3.5: Declare variables to fix error in strict mode</li>
+<li>v1.3.4: Don&#39;t override existing modernizr</li>
+<li>v1.3.3: Update minified js to match source</li>
+<li>v1.3.2: Remove grayscale on hover in ie6-9 (fade option), use same svg filter in polyfill as in css</li>
+<li>v1.3.1: Bugfix for empty gray class name</li>
+<li>v1.3.0: Rename fade class to grayscale-fade to resolve conflict with bootstrap</li>
+<li>v1.2.0: IE shim: Copy styles from element to replacement element</li>
+<li>v1.1.1: Improve documentation and demo</li>
+<li>v1.1.0: Support for background images with basic background-size and background-position</li>
+<li>v1.0.0: First basic version with support for &lt;img&gt; tags</li>
+</ul>
+<h2 id="license">License</h2>
+<p>MIT &copy; Karl Horky</p>

@@ -1,0 +1,40 @@
+// Forms.
+
+.contact-form,
+.search-form {
+	// @include margin(null null $vert-spacing-unit null);
+	label {
+		font-size: $base-font-size * 1.8;
+		font-family: $heading-font-family;
+		margin-bottom: $vert-spacing-unit / 2;
+	}
+	.form-text,
+	.form-textarea,
+	.form-select {
+		font-size: $base-font-size * 1.8;
+		border: 1px solid $dark-white;
+		@include border-radius(0);
+		font-family: $base-font-family;
+	}
+	.description {
+		font-size: $base-font-size * 1.4;
+	}
+	.field-prefix {
+		font-size: $base-font-size * 1.4;
+	}
+	.form-submit {
+		@include padding(0.5rem 1rem);
+		background-color: $black;
+		color: $white;
+		font-size: $base-font-size * 1.6;
+		font-weight: normal;
+		position: relative;
+		@include border-radius(0);
+		text-decoration: underline;
+		margin-bottom: $vert-spacing-unit /2;
+		&:hover {
+			text-decoration: none;
+			right: 0;
+		}
+	}
+}

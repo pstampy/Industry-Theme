@@ -1,0 +1,33 @@
+// Tables
+.l-main {
+	table {
+		line-height: 1.5;
+		width: 100%;
+		border: none;
+		ul {
+			@include margin(0);
+			list-style-type: square;
+			@include margin(0 0 0 1em);
+		}
+		p {
+			@include padding(0);
+			@include margin(0);
+		}
+		th, td {
+			@include background($dark-white);
+			@include padding(0.75em 1em);
+			font-size: 1.4em;
+			border-bottom: 1px solid $dark-white;
+			vertical-align: top;
+			&.header-cell {
+				@include background(transparent);
+			}
+			&.header-row {
+				font-size: 1.6em;
+			}
+		}
+		td {
+			@include background(transparent);
+		}
+	}
+}

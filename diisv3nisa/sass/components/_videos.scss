@@ -1,0 +1,30 @@
+// Videos.
+
+.video-wrapper {
+	@include margin(0 0 1rem 0);
+	@include clearfix;
+	.left {
+		@include margin(0 0 1rem 0);
+	}
+}
+
+.page-taxonomy {
+	.theme-video {
+		@include margin($vert-spacing-unit $horz-white-spacing-unit);
+	}
+}
+
+@include breakpoint(tablet) {
+	.video-wrapper {
+		.video-container {
+			@include margin(0);
+		}
+		.left {
+			@include span(first $tab-cols / 2 of $tab-cols);
+			@include margin(0);
+		}
+		.right {
+			@include span(last $tab-cols / 2 of $tab-cols);
+		}
+	}
+}

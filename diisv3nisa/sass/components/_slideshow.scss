@@ -1,0 +1,52 @@
+// Slideshows
+
+.slideshow,
+.video {
+	a {
+		border-bottom: none;
+		&:hover {
+			border-bottom: none;
+		}
+	}
+	.flexslider {
+		margin-bottom: $vert-spacing-unit;
+		@include background(transparent);
+		border: none;
+	}
+	.flex-caption {
+		margin-top: $vert-spacing-unit / 2;
+		font-style: italic;
+	}
+	.flex-control-nav {
+		bottom: -$vert-spacing-unit / 2;
+		li {
+			margin: 0 $horz-spacing-unit / 4;
+		}
+	}
+	.flex-pauseplay {
+		a {
+			bottom: -10px;
+			height: 22px;
+		}
+	}
+}
+
+.slideshow {
+	@extend %purple;
+}
+
+// Override SLICK module style elements
+
+.slick-slider,
+.pane-video-slideshow-slick-slideshow h2  {
+	margin-bottom:0;
+}
+
+.slick--skin--3d-back .slick-initialized  {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.slick--center .slick-track {
+	padding-top: 0;
+}

@@ -1,0 +1,33 @@
+// Sponsor links
+
+.sponsors {
+	@include clearfix;
+	@extend %grapefruit;
+	.sponsor-item {
+		margin-bottom: 0.3rem;
+		a {
+			@include align-items(center);
+			@include display(flex);
+			@include button($grapefruit);
+			//display: block;
+			font-size: $base-font-size * 2.0;
+			height: rem(40px);
+			padding:0;
+			width: 100%;
+			img {
+				height: rem(40);
+				width: rem(40);
+				float: left;
+				margin-right: rem(8);
+			}
+		}
+	}
+}
+
+@include breakpoint(tablet) {
+	.sponsors {
+		.sponsor-item {
+			@include gallery(1 of 2);
+		}
+	}
+}

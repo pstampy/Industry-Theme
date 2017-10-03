@@ -1,0 +1,127 @@
+// Branding
+
+.l-branding {
+	@extend %bright-yellow;
+	@include clearfix;
+	padding: 2.5rem 1rem;
+	margin: null -15px;
+	text-align: center;
+	.headings {
+		position: relative;
+		@include clearfix;
+		height: 11rem;
+		&.caretaker {
+			height: auto;
+			p {
+				font-size: $base-font-size * 1.8;
+				a {
+					color: $black;
+					font-weight: bold;
+					text-decoration: none;
+					border-bottom: 1px solid transparent;
+					@include transition(all 0.3s ease-in-out);
+					&:hover {
+						border-bottom: 1px solid black;
+					}
+				}
+			}
+		}
+		@include breakpoint(tablet) {
+			height: 4rem;
+			&.caretaker {
+				height: auto;
+			}
+		}
+		@include breakpoint(desktop) {
+			height: 6rem;
+			&.caretaker {
+				height: auto;
+			}
+		}
+	}
+	h1 {
+		@extend %fade-in-up;
+		margin: 1.2rem 0 0.55rem;
+		line-height: $base-font-size * 1.1;
+		padding-bottom: 0;
+		&.first,
+		&.second {
+			@include position(absolute, 0 null null 0);
+			width: 100%;
+		}
+		&.first {
+			@extend %fade-in-up-out-in;
+		}
+		&.second {
+			@extend %fade-in-out;
+		}
+	}
+	h2 {
+		font-size: $base-font-size * 2.8;
+	}
+	.site-logos {
+		@include clearfix;
+		@include pad(0);
+		.left-logo,
+		.right-logo {
+			@include span($desk-cols);
+			text-align: center;
+			img {
+				@extend %fade;
+			}
+		}
+		.left-logo {
+			@include margin(15px 10px);
+			img {
+				width: 122px;
+			}
+		}
+		.right-logo {
+			@include margin(13px 10px);
+			img {
+				width: 175px;
+			}
+		}
+	}
+	a img {
+		border: 0;
+	}
+	h1.element-invisible {
+		font-size: 1px;
+	}
+}
+
+
+@include breakpoint(tablet) {
+	.l-branding {
+		h1 {
+			margin: 0 0 0.55rem;
+		}
+		.site-logos {
+			text-align: center;
+			.left-logo {
+				text-align: right;
+				width: 46%;
+				img {
+					width: 165px;
+				}
+			}
+			.right-logo {
+				width: 46%;
+				text-align: left;
+				img {
+					width: 245px;
+				}
+			}
+			
+		}
+	}
+}
+@include breakpoint(desktop) {
+	.l-branding {
+		h1 {
+			font-size: $base-font-size * 5;
+			@include margin(null null 1.5rem);
+		}
+	}
+}

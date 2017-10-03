@@ -1,0 +1,39 @@
+// Home page case studies
+
+.areas {
+	@extend %purple;
+	h2 {
+		font-size: $base-font-size * 2.5;
+		font-weight: 300;
+	}
+	h3 {
+		text-transform: uppercase;
+		font-weight: 300;
+		font-size: $base-font-size * 1.2;
+	}
+	img {
+		margin-bottom: $vert-spacing-unit;
+		margin-top: $vert-spacing-unit;
+	}
+	a {
+		color: $white;
+		@include display(block);
+		@include border-radius(rem(3px));
+		@include transition(background-color $base-duration $base-timing);
+		padding-bottom: $vert-spacing-unit;
+		&:hover {
+			color: $corporate-accent-2;
+			@include background($corporate-accent-1);
+		}
+	}
+	.view-content {
+		@include align-items(stretch);
+		@include display(flex);
+		@include flex-direction(row);
+		@include justify-content(flex-start);
+		.term-item {
+			@include flex(1 1 auto);
+			text-align: center;
+		}
+	}
+}

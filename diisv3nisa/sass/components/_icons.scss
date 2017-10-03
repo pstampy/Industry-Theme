@@ -1,0 +1,13 @@
+// Theme specific icons.
+
+$theme-icons: (17: leap, 18: together, 19: bright, 20: example, 29: investors, 28: research-universities, 25: startups-entrepreneurs, 27: young-australians, 26: business);
+$node-icons: (1136: agenda, 1486: media);
+
+@each $tid, $icon in $theme-icons {
+	.page-taxonomy-term-#{$tid} .term-description {
+		@include breakpoint(desktop) {
+			background-position: right center;
+			@include padding(0);
+		}
+	}
+}

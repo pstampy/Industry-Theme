@@ -1,0 +1,129 @@
+// Social media
+
+.social-media {
+	width: 100%;
+	@include margin(null null $vert-spacing-unit / 2 null);
+
+	.account-list {
+		@include align-items(stretch);
+		@include display(flex);
+		@include flex-direction(row);
+		@include flex-wrap(nowrap);
+		@include justify-content(center);
+		div {
+			@include flex(0 0 auto);
+			@include margin(5px);
+			height: 50px;
+			width: 50px;
+			a {
+				@include display(block);
+				@include hide-text;
+				height: 100%;
+				text-indent: 200%;
+				width: 100%;
+			}
+
+			$social-media: facebook, twitter, youtube, contact, linkedin, instagram;
+
+			@each $account in $social-media {
+				&.#{$account} a {
+					@include background(url('../images/icons/social/icn-#{$account}.svg'), $dark-white);
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: auto 20px;
+					@include transition(all 0.2s ease-in-out);
+					&:hover, &:focus{
+						background-size: auto 25px;
+					}
+				}
+			}
+			.desktop {
+				display: none;
+				visibility: hidden;
+			}
+			.mobile {
+				display: block;
+				visibility: visible;
+			}
+		}
+	}
+}
+.social-share {
+	width: 100%;
+	@include padding(0 $horz-spacing-unit / 2);
+	margin-bottom: $vert-spacing-unit;
+	@extend %dark-white;
+	position: relative;
+	h2 {
+		position: absolute;
+		right: 17.5rem;
+		top:0;
+		text-align: right;
+		float: left;
+		margin: 0;
+		line-height: $base-font-size * 3.4;
+		font-size: $base-font-size * 1.8;
+	}
+	ul {
+		list-style-type: none;
+		@include align-items(stretch);
+		@include display(flex);
+		@include flex-direction(row);
+		@include flex-wrap(nowrap);
+		@include justify-content(flex-end);
+		li {
+			@include flex(0 0 auto);
+			width: 50px;
+			height: 50px;
+			@include margin(5px);
+			a {	
+				height: 100%;
+				width: 100%;
+				@include display(block);
+				@include hide-text;
+				text-indent: 200%;
+			}
+			$social-media: facebook, twitter, email, print;
+
+			@each $account in $social-media {
+				a.#{$account}-share {
+					background-image: url('../images/icons/social/share-#{$account}.svg');
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: auto 20px;
+					@include transition(all 0.2s ease-in-out);
+					&:hover, &:focus{
+						background-size: auto 25px;
+					}
+				}
+			}
+		}
+	}
+}
+@include breakpoint(tablet) {
+	.social-share{
+		clear:both;
+	}	
+	.social-media {
+		.account-list{
+			div {
+				.desktop {
+					display: block;
+					visibility: visible;
+				}
+				.mobile {
+					display: none;
+					visibility: hidden;
+				}
+			}
+		}
+	}
+	
+}
+@include breakpoint(desktop) {
+	.social-media {
+		.account-list {
+			@include justify-content();
+		}
+	}
+}

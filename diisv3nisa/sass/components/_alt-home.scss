@@ -1,0 +1,52 @@
+// Alternate home page
+
+.l-page {
+	@include padding(44px null null null);
+}
+.messages {
+	@include display(none);
+}
+.top-wrapper {
+	@extend %bright-yellow;
+	@include margin(null null 0.6rem null);
+}
+.top {
+	text-align: center;
+}
+.top-row-wrapper {
+	@include clearfix;
+	@include margin(0 0 $vert-spacing-unit 0);
+}
+.left-top {
+	@include span(full);
+	@include margin(null null $vert-spacing-unit / 2 null);
+}
+.right-top {
+	@include span(full);
+}
+.center-wrapper {
+	@include margin(null null 0.6rem null);
+}
+.bottom-wrapper {
+	@extend %bright-pink;
+	@include margin(null null 0.6rem null);
+	h2 {
+		text-align: center;
+	}
+}
+
+@include breakpoint(tablet) {
+	.alternate-home {
+		.l-page {
+			@include padding(0 null null null);
+		}
+		.left-top {
+			@include margin(0);
+			@include span(first $desk-cols / 2 of $desk-cols);
+		}
+		.right-top {
+			@include span(last $desk-cols / 2 of $desk-cols);
+		}
+		
+	}
+}

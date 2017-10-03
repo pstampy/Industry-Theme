@@ -1,0 +1,77 @@
+// Boxes
+
+%box {
+	color: $light-black;
+	margin-bottom: 0.3rem;
+	padding: 1.5rem $vert-spacing-unit;
+	font-size: $base-font-size;
+}
+%bright-yellow {
+	@extend %box;
+	@include background($bright-yellow);
+	margin-bottom: 0;
+}
+%bright-pink {
+	@extend %box;
+	@include background($light-pink);
+	margin-bottom: 0;
+	border-bottom: 12px solid $bright-pink;
+}
+
+%bright-blue {
+	@extend %box;
+	@include background($bright-blue);
+	font-size: $base-font-size;
+	margin-bottom: 0;
+}
+
+%dark-white {
+	@extend %box;
+	@include background($dark-white);
+	font-size: $base-font-size;
+	margin-bottom: 0;
+}
+
+%grapefruit {
+	@extend %box;
+	@include box-background($grapefruit);
+}
+
+%purple {
+	@extend %box;
+	@include box-background($purple);
+}
+
+%pink {
+	@extend %box;
+	@include box-background($pink);
+}
+
+%blue {
+	@extend %box;
+	@include background($light-blue);
+	border-bottom: 12px solid $super-blue;
+}
+
+%yellow {
+	@extend %box;
+	@include background($light-yellow);
+	border-bottom: 12px solid $mid-yellow;
+}
+
+%green {
+	@extend %box;
+	@include background($light-green);
+	border-bottom: 12px solid $green;
+}
+
+%black {
+	@extend %box;
+	@include background($light-black);
+	color: $white;
+}
+%dark-mid-grey {
+	@extend %box;
+	@include background($dark-mid-grey);
+	color: $dark-mid-white;
+}

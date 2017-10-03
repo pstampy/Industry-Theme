@@ -1,0 +1,127 @@
+// Events
+
+.event-calendar-list {
+	clear: both;
+	@include margin(null);
+	h3 {
+		text-align: center;
+	}
+	a {
+		font-weight: normal;
+	}
+	.views-exposed-form {
+		display: none;
+		visibility: hidden;
+	}
+	.view-content {
+		@include margin(null null $vert-spacing-unit null);
+	}
+	@extend %dark-white;
+	.form-item-tid {
+		.description {
+			display: none;
+		}
+	}
+	.events-list-item {
+		@include clearfix;
+		border-top: 1px solid $mid-white;
+		@include padding($vert-spacing-unit/2 null);
+		p {
+			padding: null;
+			margin: 0;
+		}
+		.date-display-single {
+			@include span(first 1 of 5);
+			font-weight: bold;
+			font-style: normal;
+			line-height: $base-font-size * 1.75;
+		}
+		p {
+			@include span(last 4 of 5);
+		}
+	}
+	.more-link {
+		text-align: center;
+		a {
+			@include padding(0.5rem 1rem);
+			@include transition(all 150ms ease);
+			background-color: $black;
+			color: $white;
+			font-size: $base-font-size * 1.6;
+			font-weight: normal;
+			position: relative;
+			&:hover {
+				text-decoration: none;
+				&:after {
+					right: 0;
+				}
+			}
+			&:after {
+				@include transition(right 0.3s ease-in-out);
+				background-color: $bright-yellow;
+				bottom: 0;
+				content: '';
+				height: rem(2);
+				left: 0;
+				position: absolute;
+				right: 100%;
+			}
+		}
+	}
+}
+.front .event-calendar-list{
+ 	h3 {
+		font-size: $base-font-size * 2.6;
+	}
+}
+.date-display-single,
+.date-display-range {
+	display: inline-block;
+	font-size: $base-font-size * 1.6;
+	@include margin(null);
+	font-style: italic;
+	.date-display-range {
+		display: inline-block;
+	}
+}
+.node-type-event {
+	.center-wrapper {
+		@include margin($vert-spacing-unit null);
+		h1 {
+			@include margin(null null $vert-spacing-unit);
+		}
+		.date-display-single {
+			@include margin(null null $vert-spacing-unit / 2);
+		}
+	}
+}
+.page-content-event {
+	.related-information {
+		margin-top: $vert-spacing-unit;
+		p + a {
+			font-size: $base-font-size * 1.8;
+		}
+		.related-information-item {
+			margin-bottom: 20px;
+			width: 100%;
+		    background-color: #fff;
+		    border: 1px solid #ddd;
+		    border-radius: 0;
+		    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+		    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+		    text-align: left;
+		    padding: 15px;
+		    min-height: 0;
+		    height: auto;
+		}
+	}
+
+}
+
+@include breakpoint(desktop) {
+	.event-calendar-list {
+		.more-link {
+			text-align: left;
+		}
+	}
+}

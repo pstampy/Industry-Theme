@@ -1,0 +1,285 @@
+// Related information
+
+$theme-icons: (
+	1: culture, 
+	2: collaboration, 
+	3: talent, 
+	4: government, 
+	);
+.related-information {
+	.description {
+		display: none;
+	}
+	.views-exposed-form {
+		margin-bottom: $vert-spacing-unit;
+		label {
+			text-transform: uppercase;
+			float: left;
+			font-size: $base-font-size * 1.8;
+			margin-right: $horz-spacing-unit/4; 
+		}
+		.views-exposed-widget {
+			float: none;
+		}
+	}
+	.bef-select-as-links {
+		margin-top: $vert-spacing-unit;
+		> .form-item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			text-align: center;
+			font-size: $base-font-size * 1.6;			
+			.form-item {
+				height: 210px;
+				background-size: 34%;
+				.ie11 & {
+					background-size: 210px;
+				}
+				display: table;
+				width: 50%;
+				@include transition(all 0.3s ease-in-out);
+				@include margin(null null $vert-spacing-unit null);
+				@include padding(10px);
+				&:hover,
+				&.highlight {
+					background-color: $bright-yellow;
+					background-size: 37.4%;
+					.ie11 & {
+						background-size: 220px;
+					}
+				}
+			}
+			a {
+				display: table-cell;
+				vertical-align: bottom;
+				width: 100%;
+				height: 100%;
+				text-decoration: none;
+				font-weight: normal;
+				font-family: $heading-font-family;
+				font-size: $base-font-size * 1.4;
+			}
+		}
+	}
+	@each $tid, $image in $theme-icons {
+		.form-item-edit-tid-#{$tid} {
+			background: url('../images/icons/theme/#{$image}.svg') $white no-repeat 50% 20%;
+		}
+	}
+}
+
+.related-information-item {
+	@include span(first 2 of $mob-cols);
+	border: 1px solid $mid-white;
+	height: 280px;
+	margin-bottom: $vert-spacing-unit /2;
+	overflow: hidden;
+	position: relative;
+	a {
+		width: 100%;
+		height: 100%;
+		display: block;
+		&:hover {
+			h2 {
+				color: $bright-yellow;
+			}
+			.group-text-container {
+				@include filter(grayscale(100%));
+			}
+		}
+	}
+	img {
+		height: 100%;
+		width: auto;
+	}
+	.group-text-container {
+		@include position(absolute, 0 null null null);
+		width: 100%;
+		height: 100%;
+		background-attachment: scroll !important;
+		z-index: 0;
+		@include filter(grayscale(0%));
+		@include transition(all 0.3s ease-in-out);
+	}
+	.related-information-overlay {
+		@include position(absolute, 0 null null null);
+		width: 100%;
+		height: 100%;
+		background-color: $black;
+		opacity: 0.6;
+	}
+	.related-information-text {
+		position: absolute;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		z-index: 1;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		h2 {
+			@include padding($vert-spacing-unit / 2);
+			@include transition(all 0.3s ease-in-out);
+			color: $white;
+			flex: 1 0 100%;
+			font-size: $base-font-size * 1.7;
+			margin-bottom: 0;
+			max-width: 100%;
+			text-align: center;
+			width: 130%;
+		}
+		.date, .amount {
+			&:empty {
+				display: none;
+				visibility: hidden;
+			}
+			font-family: $heading-font-family;
+			width: 50px;
+			height: 50px;
+			background-color: $bright-yellow;
+			padding: 9px 5px;
+			border-radius: 50%;
+			text-align: center;
+		}
+		.date {
+			margin-left: 1%;
+			text-transform: uppercase;
+			font-size: $base-font-size * 1.2;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.date-display-single {
+				font-style: normal;
+			}
+		}
+		.amount {
+			font-size: 1.5em;
+			font-weight: bold;
+			margin-right: 1%;
+			line-height: $base-font-size * 2;
+		}
+		
+	}
+	.node-3071 h2, .node-2692 h2, .node-3067 h2, .node-3073 h2 {
+			background: url('../images/play.png') no-repeat center;
+		}
+}
+.pager {
+	@include pager($white);
+}
+.field--name-field-basic-page-date .date-display-single {
+	width: 20%; text-align: center; font-size: 1.5em; font-weight: bold;
+}
+
+.related-information-item:nth-of-type(4n+1) {
+	@include span(first 4 of $mob-cols);
+}
+.related-information-item:nth-of-type(4n+0) {
+	@include span(last 4 of $mob-cols);
+}
+.related-information-item:nth-of-type(4n+2) {
+	@include span(last 2 of $mob-cols);
+}
+.section-audience {
+	.related-information {
+		.views-exposed-form {
+			display: none;
+			visibility: hidden;
+		}
+	}
+}
+@include breakpoint(tablet) {
+	.related-information {
+		.description {
+			display: block;
+			ul {
+				@include no-bullets;
+				@include padding(0);
+				font-size: $base-font-size * 0.8;
+				li {
+					width: 25%;
+					@include padding(10px);
+					@include margin(0);
+					float: left;
+				}
+			}
+		}
+		.bef-select-as-links {
+			> .form-item {	
+				.form-item {
+					width: 25%;
+				}
+			}
+		}
+		.related-information-item {
+			min-height: 245px;
+			h2 {
+				font-size: $base-font-size * 2.4;
+			}
+			.file-image {
+				img {
+					width: 200px;
+					height: 200px;
+				}
+			}
+		}
+	}
+
+	.page-node-1136, .page-taxonomy-term-32 {
+		.related-information{
+			.related-information-item {
+				@include span(last 4 of $desk-cols);
+			}
+			.related-information-item:nth-of-type(8n+1) {
+				@include span(first 5 of $desk-cols);
+			}
+			.related-information-item:nth-of-type(8n+5) {
+				@include span(first 5 of $desk-cols);
+			}
+			.related-information-item:nth-of-type(8n+4) {
+				@include span(first 3 of $desk-cols);
+			}
+			.related-information-item:nth-of-type(8n+2) {
+				@include span(3 of $desk-cols);
+			}
+			.related-information-item:nth-of-type(8n+7) {
+				@include span(first 8 of $desk-cols);
+			}
+		}
+	}
+	.related-information {
+		.related-information-item {
+			@include span(12 of $desk-cols);
+			.group-text-container {
+				h2 {
+					font-size: $base-font-size *1.8;
+					a {
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+	.related-information-item:nth-of-type(5n+1) {
+		@include span(first 8 of $desk-cols);
+	}
+	.related-information-item:nth-of-type(5n+4) {
+		@include span(last 8 of $desk-cols);
+	}
+	.related-information-item:nth-of-type(5n+2) {
+		@include span(last 4 of $desk-cols);
+	}
+	.related-information-item:nth-of-type(5n+3) {
+		@include span(first 4 of $desk-cols);
+	}
+}
+@include breakpoint(desktop) {
+	.section-audience .related-information {
+		h2 {
+			width: 130%;
+		}
+	}
+}

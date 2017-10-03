@@ -1,0 +1,75 @@
+// Mailchimp styles
+
+#mc_embed_signup {
+	@include margin(0 0 $vert-spacing-unit 0);
+	.indicates-required {
+		font-size: $base-font-size * 1.8;
+		font-style: italic;
+		@include margin(0 0 $vert-spacing-unit 0);
+	}
+	.asterisk {
+		color: $red;
+	}
+	.mc-field-group {
+		@include margin(0 0 $vert-spacing-unit 0);
+		strong {
+			font-size: $base-font-size * 1.8;
+			font-family: $heading-font-family;
+			@include margin(0 0 $small-spacing 0);
+			@include display(block);
+		}
+		.form-initiatives {
+			list-style-type: none;
+			display: block;
+			padding: 0;
+			li {
+				font-size: $base-font-size;
+				font-weight: normal;
+				line-height: $base-font-size * 2;
+				float: left;
+				width: 50%;
+				border-bottom: 1px solid $light-white;
+				@include padding($vert-spacing-unit / 2 $horz-spacing-unit / 2);
+				input {
+					width: 14px;
+					height: 14px;
+				}
+				label {
+					margin-left: 20px;
+				}
+			}
+		}
+	}
+	.clear {
+		clear: both;
+	}
+	label {
+		font-family: $heading-font-family;
+		font-size: $base-font-size * 1.7;
+		@include margin(0 0 $small-spacing 0);
+	}
+	input[type='text'],
+	input[type='email'] {
+		font-size: $base-font-size * 1.8;
+		border: 1px solid $dark-white;
+		@include border-radius(0);
+		font-family: $heading-font-family;
+		@include margin(0 0 $small-spacing 0);
+	}
+	input[type='submit'] {
+		@include padding(0.5rem 1rem);
+		background-color: $black;
+		color: $white;
+		clear: both;
+		margin-top: $vert-spacing-unit / 2;
+		font-size: $base-font-size * 1.6;
+		font-weight: normal;
+		position: relative;
+		@include border-radius(0);
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+			right: 0;
+		}
+	}
+}

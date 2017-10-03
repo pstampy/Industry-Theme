@@ -1,0 +1,8 @@
+// Body, page and content styles.
+
+body {
+	@include background($white);
+	color: $light-black;
+	padding: 0;
+	margin: 0;
+}

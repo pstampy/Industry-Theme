@@ -1,0 +1,24 @@
+// Throbber
+.ajax-progress-throbber {
+	@include position(fixed, 0 null null 0);
+	background: transparent, rgba(255,255,255,.5);
+	height: 100%;
+	width: 100%;
+	z-index: 9999;
+}
+
+.ajax-progress-throbber .message {
+	@include display(none);
+}
+
+.ajax-progress-throbber .throbber {
+	@include border-radius(5px);
+	@include margin(-12px 0 0 -12px);
+	@include position(fixed, 50% null null 50%);
+	background-color: #fff;
+	background-position: 6px -14px;
+	box-shadow: 0px 0px 5px 6px rgba(0,0,0,.1);
+	height: 25px;
+	opacity: 0.8;
+	width: 25px;
+}

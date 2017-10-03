@@ -1,0 +1,105 @@
+// Information sessions.
+.panel-pane.roadshow,
+.panel-pane.nisa-action {
+    @extend %green;
+    @include margin(null null $vert-spacing-unit);
+    a {
+        font-weight: normal;
+    }
+    h2 {
+        text-align: center;
+    }
+    .menu-block-wrapper {
+        background-color: transparent;
+        ul.menu {
+            list-style: none;
+            padding: 0;
+            .leaf {
+                list-style-image: none;
+                list-style-type: none;
+            }
+        }
+    }
+}
+
+// Stats and Facts - tier 2.
+.stats-facts {
+    @extend %blue;
+    @include margin(null null $vert-spacing-unit);
+    clear: both;
+    h2 {
+        text-align: center;
+    }
+    a {
+        font-weight: normal;
+    }
+}
+
+// Other government assistance.
+.panel-pane.government-assistance {
+    @extend %bright-pink;
+    @include margin(null null $vert-spacing-unit);
+    clear: both;
+    h2 {
+        text-align: center;
+    }
+    a {
+        font-weight: normal;
+    }
+}
+
+// How will this work in practice? - Tier 3
+.practice {
+    @extend %yellow;
+    @include margin(null null $vert-spacing-unit);
+    h2 {
+        text-align: center;
+    }
+    a {
+        font-weight: normal;
+    }
+}
+
+
+
+// How will this work in practice? - Tier 3
+.csi {
+    @extend %yellow;
+    @include margin(null null $vert-spacing-unit);
+    h2 {
+        text-align: center;
+    }
+    a {
+        font-weight: normal;
+    }
+}
+
+
+//What to do - Tier 3
+.what-to-do {
+    border: 2px solid $dark-mid-grey;
+    padding: 1.5rem $vert-spacing-unit;
+    margin-top: $vert-spacing-unit;
+    ul {
+        @include padding(0);
+        li {
+            list-style-type: none;
+            background-image: url('../images/list-tick.png');
+            background-repeat: no-repeat;
+            background-size: 1.2rem;
+            background-position: 0 5px;
+            margin-left: 0;
+            padding-left: 2em;
+        }
+    }
+    a {
+        font-weight: normal;
+    }
+}
+
+
+@include breakpoint(desktop) {
+    .what-to-do {
+        margin-bottom: $vert-spacing-unit;
+    }
+}

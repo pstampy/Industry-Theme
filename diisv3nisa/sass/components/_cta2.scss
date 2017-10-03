@@ -1,0 +1,18 @@
+// Home page top call to action
+
+.call-to-action-2 {
+	@extend %pink;
+	@include align-items(center);
+	@include display(flex);
+	@include justify-content(center);
+	height: 15em;
+	text-align: center;
+	font-size: $base-font-size * 2.0;
+	text-transform: uppercase;
+	p {
+		@include background(url('../images/talent-and-skill.png'));
+		background-repeat: no-repeat;
+		background-position: center top;
+		padding-top: 10rem;
+	}
+}

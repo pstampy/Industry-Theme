@@ -1,0 +1,11 @@
+// Blockquotes
+
+blockquote {
+	@include background(lighten($bright-blue, 30%));
+	@include margin(null null $vert-spacing-unit / 2 null);
+	@include padding($vert-spacing-unit / 2);
+	border: 1px solid $bright-blue;
+	p:last-child {
+		@include margin(0);
+	}
+}

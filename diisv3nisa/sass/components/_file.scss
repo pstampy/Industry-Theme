@@ -1,0 +1,10 @@
+// File
+
+
+ul.file-list {
+	@include padding($vert-spacing-unit/2 0);
+	li {
+		list-style-type: none;
+	}
+}
+

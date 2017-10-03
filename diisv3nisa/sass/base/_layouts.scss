@@ -1,0 +1,44 @@
+// Base layouts
+
+$sidebar-columns: 6;
+$column-columns: 6;
+
+html {
+	box-sizing: border-box;
+	*,
+	*::after,
+	*::before {
+		box-sizing: inherit;
+	}
+}
+
+@include breakpoint(tablet) {
+	.top,
+	.content-wrapper {
+		@include clearfix;
+	}
+}
+@include breakpoint(desktop) {
+	.l-page {
+		@include padding(null 6.5%);
+	}
+	.left-sidebar {
+		@include span(first 8 of $desk-cols);
+		padding-left: 0;
+		//.page-taxonomy &, .page-home & {
+		//	@include span(first $desk-cols / $desk-cols * $sidebar-columns - 3 of $desk-cols);
+		//}
+	}
+	.right-column {
+		@include span(last 4 of $desk-cols);
+		padding-right: 0;
+		&:empty {
+						display: none;
+						visibility: hidden;
+					}
+		//.page-taxonomy &, .page-home & {
+		//	@include span(first $desk-cols / $desk-cols * $sidebar-columns - 3 of $desk-cols);
+		//}
+
+	}
+}

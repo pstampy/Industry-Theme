@@ -1,0 +1,91 @@
+'use strict';
+
+import plugins  from 'gulp-load-plugins';
+import yargs    from 'yargs';
+import browser  from 'browser-sync';
+import gulp     from 'gulp';
+import yaml     from 'js-yaml';
+import fs       from 'fs';
+
+// Load all Gulp plugins into one variable
+const $ = plugins();
+
+// Check for --production flag
+const PRODUCTION = !!(yargs.argv.production);
+
+// Check for --live flag
+const LIVE = !!(yargs.argv.live);
+
+// Load settings from settings.yml
+const { COMPATIBILITY, PORT, PROXY, PATHS } = loadConfig();
+
+function loadConfig() {
+  let ymlFile = fs.readFileSync('config.yml', 'utf8');
+  return yaml.load(ymlFile);
+}
+
+
+// Build the site, run the server, and watch for file changes
+gulp.task('default', gulp.series(sass, server, watch));
+
+// Compile Sass into CSS
+// In production, the CSS is compressed
+function sass() {
+  return gulp.src('./sass/*.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      includePaths: PATHS.sass,
+      noCache: true
+    })
+      .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: COMPATIBILITY
+    }))
+    // Comment in the pipe below to run UnCSS in production
+    //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
+    .pipe($.if(PRODUCTION, $.cssnano()))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest('css'))
+    .pipe(browser.reload({ stream: true }));
+}
+
+function jsWatch(done) {
+  browser.reload();
+  done();
+}
+
+function phpWatch(done) {
+  browser.reload();
+  done();
+}
+
+// Start a server with BrowserSync to preview the site in
+function server(done) {
+  if(LIVE) {
+    browser.init({
+      proxy: "http://localhost/govcms-7.x-2.14/",
+      serveStatic: ['.'],
+      rewriteRules: [
+      {
+        match: new RegExp('/sites/all/themes/Industry Theme/diiv3nisa/css/diiv3nisa.styles.css'),
+        fn: function() {
+          return '/css/nisa.styles.css';
+        }
+      }
+  ]
+    });
+  } else {
+    browser.init({
+      proxy: "http://localhost/govcms-7.x-2.14/"
+    });
+  }
+  done();
+}
+
+
+// Watch for changes to Sass, twig files and .js.
+function watch() {
+  gulp.watch('./sass/**/*.scss', sass);
+  gulp.watch('./templates/**/*.tpl.php', phpWatch);
+  gulp.watch('./js/**/*.js', jsWatch);
+}

@@ -1,0 +1,140 @@
+  /*.page-node {
+    .top-wrapper {
+        .pane-crumbs-breadcrumb {
+            border-top: rem(4) solid $bright-yellow;
+        }
+    }
+    .middle-wrapper {
+        width: 100%;
+        @include margin(null null $vert-spacing-unit / 2 null);
+
+
+    }
+}
+*/
+  
+  .pane-node-field-basic-page-image-reference .casestudy-image {
+      margin: 0 $vert-spacing-unit;
+      img {
+          margin: 0;
+          max-width: 100%;
+          height: auto;
+      }
+  }
+  
+  @include breakpoint(tablet) {
+      .page-node {
+          .content {
+              article {
+                  width: auto;
+                  @include span(last $desk-cols / 2 of $desk-cols);
+                  figcaption {
+                      text-align: left;
+                  }
+              }
+          }
+      }
+      .page-node {
+          .middle-wrapper {
+              .left-sidebar {
+                  .image-header {
+                      height: 340px;
+                      position: relative;
+                      display: flex;
+                      flex-wrap: wrap;
+                      justify-content: flex-start;
+                      align-items: flex-end;
+                      overflow: hidden;
+                      h1 {
+                          background-color: rgba(0, 0, 0, 0.5);
+                          @include padding($vert-spacing-unit / 3 $horz-spacing-unit / 3);
+                          color: $white;
+                          position: absolute;
+                          top: 0;
+                          width: 100%;
+                          z-index: 1;
+                      }
+                      .pane-node-field-basic-page-image-reference {
+                          &:empty {
+                              display: none;
+                              visibility: hidden;
+                          }
+                          position: absolute;
+                          top:0;
+                          width: 100%;
+                          img {
+                              height: auto;
+                              width: 100%;
+                              z-index: -1;
+                          }
+                      }
+                      /*.date,
+                    .amount {
+                        &:empty {
+                            display: none;
+                            visibility: hidden;
+                        }
+                        font-family: $heading-font-family;
+                        width: 50px;
+                        height: 50px;
+                        background-color: $bright-yellow;
+                        padding: 9px 5px;
+                        border-radius: 50%;
+                        text-align: center;
+                        margin: $vert-spacing-unit / 3 0 $vert-spacing-unit / 3 1%;
+                        z-index: 1;
+                        position: relative;
+                        font-weight: bold;
+                    }
+                    .date {
+                        text-transform: uppercase;
+                        font-size: 1.2em;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .date-display-single {
+                            font-style: normal;
+                            width: 100%;
+                        }
+                    }
+                    .amount {
+                        font-size: 1.5em;
+                        line-height: $base-font-size * 2;
+                    }
+                    //.amount  {
+                    //  background-color: rgba(0, 0, 0, 0.5);
+                    //  width: 100%;
+                    //}*/
+                      figcaption {
+                          text-align: right;
+                          font-size: $base-font-size * 1.4;
+                      }
+                  }
+              }
+          }
+      }
+      .casestudy-image {
+          margin: 0 $vert-spacing-unit;
+          width: 50%;
+          float: right;
+          img {
+              margin: 0;
+              max-width: 100%;
+              height: auto;
+          }
+      }
+  }
+  
+  @include breakpoint(desktop) {
+      .node-type-full-width {
+          .center-wrapper {
+              .pane-node-title,
+              .pane-node-content {
+                  @include padding(null 0);
+              }
+          }
+      }
+  }
+
+
+

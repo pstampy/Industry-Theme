@@ -1,0 +1,8 @@
+// Home page top call to action
+
+.call-to-action-1 {
+	@extend %blue;
+	p {
+		font-size: $base-font-size * 2.6;
+	}
+}

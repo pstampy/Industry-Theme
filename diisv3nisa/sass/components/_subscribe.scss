@@ -1,0 +1,45 @@
+// Subscribe 
+.subscribe {
+	@extend %dark-white; 
+	text-align: center;
+	.more-link {
+		margin-top: $vert-spacing-unit/2;
+		text-align: center;
+		a {
+			@include padding(0.5rem 1rem);
+			@include transition(all 150ms ease);
+			background-color: $black;
+			color: $white;
+			font-size: $base-font-size * 1.6;
+			font-weight: normal;
+			position: relative;
+			&:hover {
+				text-decoration: none;
+				&:after {
+					right: 0;
+				}
+			}
+			&:after {
+				@include transition(right 0.3s ease-in-out);
+				background-color: $bright-yellow;
+				bottom: 0;
+				content: '';
+				height: rem(2);
+				left: 0;
+				position: absolute;
+				right: 100%;
+			}
+		}
+	}
+}
+
+@include breakpoint(desktop) {
+	.subscribe {
+		@include background($dark-white);
+		color: $light-black;
+		font-size: $base-font-size;
+		margin-bottom: 0;
+		padding: 1.5rem $vert-spacing-unit;
+	}
+
+}

@@ -1,0 +1,28 @@
+// Top bar
+
+.l-top-bar {
+	@extend %black;
+		padding: 1.5em 0;
+		display: block;
+		visibility: visible;
+		margin-bottom: 0;
+		width: 100%;
+		text-align: center;
+		a {
+			color: $white;
+			font-weight: 700;
+			line-height: $base-font-size * 1.5;
+    		font-size: $base-font-size * 1.6;
+    		text-align: center;
+		}
+}
+@include breakpoint(tablet) {
+	.l-top-bar {
+		text-align: left;
+		@include padding(10px $horz-white-spacing-unit);
+		a {
+			line-height: $base-font-size * 2.3;
+		}
+	}
+}
+

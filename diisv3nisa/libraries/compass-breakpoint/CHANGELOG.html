@@ -1,0 +1,104 @@
+<h1 id="changelog">Changelog</h1>
+<h2 id="2-6-0">2.6.0</h2>
+<ul>
+<li><strong>Change</strong> Moved variable settings to new Breakpoint settings. Future versions will deprecate variable settings. Use <code>@include breakpoint-set()</code> or <code>@include bkpt-set()</code> to change settings, <code>@include breakpoint-reset()</code> or <code>@include bkpt-reset()</code> to reset settings to their default state. Please update your settings as followins:<ul>
+<li><code>$breakpoint-default-media: value;</code> should become <code>@include bkpt-set(&#39;default media&#39;, value);</code></li>
+<li><code>$breakpoint-default-feature: value;</code> should become <code>@include bkpt-set(&#39;default feature&#39;, value);</code></li>
+<li><code>$breakpoint-default-pair: value;</code> should become <code>@include bkpt-set(&#39;default pair&#39;, value);</code></li>
+<li><code>$breakpoint-force-media-all: value;</code> should become <code>@include bkpt-set(&#39;force all media type&#39;, value);</code></li>
+<li><code>$breakpoint-to-ems: value;</code> should become <code>@include bkpt-set(&#39;to ems&#39;, value);</code></li>
+<li><code>$breakpoint-resolutions: value;</code> should become <code>@include bkpt-set(&#39;transform resolutions&#39;, value);</code></li>
+<li><code>$breakpoint-no-queries: value;</code> should become <code>@include bkpt-set(&#39;no queries&#39;, value);</code></li>
+<li><code>$breakpoint-no query fallbacks: value;</code> should become <code>@include bkpt-set(&#39;no query fallbacks&#39;, value);</code></li>
+<li><code>$breakpoint-base-font-size: value;</code> should become <code>@include bkpt-set(&#39;base font size&#39;, value);</code></li>
+<li><code>$breakpoint-legacy-syntax: value;</code> should become <code>@include bkpt-set(&#39;legacy syntax&#39;, value);</code></li>
+</ul>
+</li>
+<li><strong>Change</strong> Adding breakpoints for <code>respond-to</code> should now be done through the mixin <code>@include add-breakpoint()</code> instead of the function call <code>$breakpoints: add-breakpoint()</code>. Future versions will deprecate function.</li>
+<li><strong>New</strong> Initial support for Libsass 3.1</li>
+</ul>
+<h2 id="2-5-0">2.5.0</h2>
+<h2 id="2-4-0">2.4.0</h2>
+<h2 id="2-3-0">2.3.0</h2>
+<h2 id="2-2-0">2.2.0</h2>
+<h3 id="nov-23-2013">Nov 23, 2013</h3>
+<ul>
+<li>fix simple or queries</li>
+<li>convert respond-to to use sass maps</li>
+<li>convert context to use sass maps</li>
+</ul>
+<h2 id="2-0-7">2.0.7</h2>
+<h3 id="sept-17th-2013">Sept 17th, 2013</h3>
+<ul>
+<li>fix fallback support for 1.x</li>
+</ul>
+<h2 id="2-0-0">2.0.0</h2>
+<h3 id="the-past">The Past</h3>
+<ul>
+<li>Looks like we forgot release notes for 2.0. oops</li>
+</ul>
+<h2 id="1-3">1.3</h2>
+<h3 id="august-28th-2012">August 28th, 2012</h3>
+<ul>
+<li>better conversion to base-ems</li>
+<li>fix floating point error</li>
+</ul>
+<h2 id="1-2">1.2</h2>
+<h3 id="august-16th-2012">August 16th, 2012</h3>
+<ul>
+<li>Added ability to force the &#39;all&#39; media type to be written by setting <code>$breakpoint-force-media-all: true;</code>. Defaults to <code>false</code>.</li>
+<li>Added ability to generate no query fallback code. See the README for full documentaiton.</li>
+</ul>
+<h2 id="1-1-1">1.1.1</h2>
+<h3 id="july-30-2012">July 30, 2012</h3>
+<ul>
+<li>Added (forgot to include the first time) the ability to query the media type using <code>breakpoint-get-context(&#39;media&#39;)</code></li>
+</ul>
+<h2 id="1-1">1.1</h2>
+<h3 id="july-29-2012">July 29, 2012</h3>
+<ul>
+<li>Added function <code>breakpoint-get-context($feature)</code> to allow users to get the current media query context</li>
+</ul>
+<h2 id="1-0-2">1.0.2</h2>
+<h3 id="july-28-2012">July 28, 2012</h3>
+<ul>
+<li>Refixed our &#39;device-pixel-ratio&#39; conversions because, frankly, the w3c was wrong.</li>
+<li>fixed bugs that caused single and triple value single queries to fail. Also bugs with stacking single and triple value queries.</li>
+</ul>
+<h2 id="1-0-1">1.0.1</h2>
+<h3 id="june-27-2012">June 27, 2012</h3>
+<ul>
+<li>fixed logic error that would print multiple instences of a media type</li>
+</ul>
+<h2 id="1-0">1.0</h2>
+<h3 id="june-22-2012">June 22, 2012</h3>
+<ul>
+<li>Refactor of the underlying logic to make everything work better and make the world a happy place.</li>
+<li>Added default options for Default Feature, Default Media, and Default Feature Pair.</li>
+<li>Changed default media from &quot;Screen&quot; to &quot;All&quot;.</li>
+<li>Added ability to have all px/pt/percentage media queries transformed into em based media queries.</li>
+</ul>
+<h2 id="0-3">0.3</h2>
+<h3 id="june-18-2012">June 18, 2012</h3>
+<ul>
+<li>Rewrote &#39;device-pixel-ratio&#39; conversions to change from prefixed nightmarish hell to Resolution standard based on the <a href="http://www.w3.org/blog/CSS/2012/06/14/unprefix-webkit-device-pixel-ratio/">W3C Unprefixing -webkit-device-pixel-ratio article</a></li>
+<li>Large README update covering feature set, installation, assumptions, and more.</li>
+</ul>
+<h2 id="0-2">0.2</h2>
+<h3 id="may-24-2012">May 24, 2012</h3>
+<ul>
+<li>Converted from Sass to SCSS</li>
+<li>Converted README examples from Sass to SCSS</li>
+<li>Added ability to do min/max easily with any valid feature</li>
+<li>Added prefixing for &quot;device-pixel-ratio&quot; feature for the three implementations (-webkit, -moz, -o) as well as a standard version for future friendliness<ul>
+<li>-moz&#39;s min/max is different than -webkit or -o, so prefixed differently</li>
+<li>Opera is strange and needs its DPR in a ratio instead of a floating point number, so requires the fraction rubygem and has a numerator/denominator function to accommodate.</li>
+</ul>
+</li>
+<li>Added ability to have single feature/value input be either have feature first or second</li>
+</ul>
+<h2 id="0-1">0.1</h2>
+<h3 id="may-22-2012">May 22, 2012</h3>
+<ul>
+<li>extract breakpoint from survival kit to this gem</li>
+</ul>

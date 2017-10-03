@@ -1,0 +1,39 @@
+// Footer menu
+
+.footer-menu {
+	@include margin(null null $vert-spacing-unit / 2 null);
+	.menu {
+		@include align-items(stretch);
+		@include display(flex);
+		@include flex-direction(row);
+		@include flex-wrap(wrap);
+		@include justify-content(center);
+	}
+	.leaf {
+		@include flex(0 0 auto);
+		@include margin(null rem(5));
+		list-style: none;
+		@include padding(rem(2));
+	}
+	a {
+		@include transition(color $base-duration $base-timing);
+		color: $white;
+		font-weight: 600;
+	}
+}
+
+@include breakpoint(desktop) {
+	.footer-menu {
+		.menu {
+			@include align-items(stretch);
+			@include display(flex);
+			@include flex-direction(row);
+			@include flex-wrap(wrap);
+			@include justify-content(flex-start);
+		}
+		.leaf.first {
+			margin-left: 0;
+		}
+	}
+
+}
