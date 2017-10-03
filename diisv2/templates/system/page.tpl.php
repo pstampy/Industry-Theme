@@ -76,10 +76,7 @@
   <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   <header class="l-header" role="banner">
     <div class="l-top-bar-wrapper">
-      <div class="l-top-bar">
-        <a href="#" class="back-to-top">Back to top</a>
-            <div class="menu-wrapper left">
-        <nav class="l-top-menu-left" role="navigation">
+       <nav class="l-top-menu-left" role="navigation">
           <ul class="menu">
             <li><a href="#main-content" title="Skip to content">Skip to content</a></li>
             <li><a href="accessibility">Accessibility options</a></li>
@@ -87,9 +84,15 @@
           </ul>
 
         </nav>
+       
+      <div class="l-top-bar">
+        <a href="#" class="back-to-top">Back to top</a>
+            <div class="menu-wrapper left">
+      
+
       </div>
             <div class="l-top-menu-right">
-           
+            <?php print render($page['branding']); ?>
             </div>
             <div class="l-search-wrapper">
               <div class="l-search" role="search">
@@ -105,6 +108,7 @@
             <img src="<?php print base_path() . path_to_theme() . '/images/crest-inline-black.png' ?>" alt="<?php print t('Home'); ?>" />
           </a>
         </div>
+
         <div class="site-name">
           <h1 class="site-name">
             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>

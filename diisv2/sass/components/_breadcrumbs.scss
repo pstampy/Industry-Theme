@@ -21,3 +21,10 @@ ul.breadcrumb {
 	}
 	
 }
+
+@include breakpoint(desktop) {
+ul.breadcrumb{
+        width: 960px;
+        margin:  auto;
+
+        }}

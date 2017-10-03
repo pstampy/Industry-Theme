@@ -5,7 +5,7 @@ body {
   line-height: $base-line-height;
 }
 html, body {
-    overflow-x:hidden; 
+    overflow-x:visible; 
   }
 h1,
 h2,
@@ -139,6 +139,13 @@ sub {
     font-size: $base-font-size;
   }
 }
+
+@include breakpoint(tablet) {
+  html, body {
+    overflow-x: visible; 
+  }
+}
+
 @include breakpoint(desktop) {
   html, body {
     overflow-x: visible; 

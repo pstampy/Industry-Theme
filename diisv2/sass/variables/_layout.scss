@@ -7,13 +7,13 @@ $all-round: $vert-spacing-unit $horz-spacing-unit;
 
 $susy: (
 	columns: 12,
-	container: 960px,
+	container: 1280px,
 );
 
 //Breakpoints. Names are what the size 'breaks into' from below, for example, mobile->tablet = $bp-tablet
 $bp-mobile: 399px;
 $bp-tablet: 768px;
-$bp-desk: 960px;
+$bp-desk: 1280px;
 
 //Column counts. The larger the screen size, the more columns we can have.
 $mob-cols: 6;
