@@ -7,7 +7,7 @@
 	@include display(none);
 }
 .top-wrapper {
-	@extend %bright-yellow;
+	@extend %bright-blue;
 	@include margin(null null 0.6rem null);
 }
 .top {

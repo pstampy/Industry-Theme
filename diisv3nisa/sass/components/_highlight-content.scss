@@ -75,27 +75,7 @@
 }
 
 
-//What to do - Tier 3
-.what-to-do {
-    border: 2px solid $dark-mid-grey;
-    padding: 1.5rem $vert-spacing-unit;
-    margin-top: $vert-spacing-unit;
-    ul {
-        @include padding(0);
-        li {
-            list-style-type: none;
-            background-image: url('../images/list-tick.png');
-            background-repeat: no-repeat;
-            background-size: 1.2rem;
-            background-position: 0 5px;
-            margin-left: 0;
-            padding-left: 2em;
-        }
-    }
-    a {
-        font-weight: normal;
-    }
-}
+
 
 
 @include breakpoint(desktop) {

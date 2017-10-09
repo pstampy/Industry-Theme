@@ -54,71 +54,15 @@
   <html class="no-js" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>>
 <?php endif; ?>
 <head>
-  <link rel="apple-touch-icon" sizes="57x57" href="/sites/all/themes/custom/nisa/favicon/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/sites/all/themes/custom/nisa/favicon/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/sites/all/themes/custom/nisa/favicon/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/sites/all/themes/custom/nisa/favicon/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/sites/all/themes/custom/nisa/favicon/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/sites/all/themes/custom/nisa/favicon/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/sites/all/themes/custom/nisa/favicon/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/sites/all/themes/custom/nisa/favicon/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/sites/all/themes/custom/nisa/favicon/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="/sites/all/themes/custom/nisa/favicon/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/sites/all/themes/custom/nisa/favicon/favicon-194x194.png" sizes="194x194">
-  <link rel="icon" type="image/png" href="/sites/all/themes/custom/nisa/favicon/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="/sites/all/themes/custom/nisa/favicon/android-chrome-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="/sites/all/themes/custom/nisa/favicon/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="/sites/all/themes/custom/nisa/favicon/manifest.json">
-  <link rel="mask-icon" href="/sites/all/themes/custom/nisa/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/sites/all/themes/custom/nisa/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#fff53e">
-  <meta name="msapplication-TileImage" content="/sites/all/themes/custom/nisa/favicon/mstile-144x144.png">
-  <meta name="msapplication-config" content="/sites/all/themes/custom/nisa/favicon/browserconfig.xml">
-  <meta name="theme-color" content="#fff53e">
-  <meta name="google-site-verification" content="uyYldum-HcXA5fv8e9D8YM2MT60fCg8JSmBgUIxvsjw" />
-  <meta property="og:site_name" content="National Innovation and Science Agenda">
-  <meta property="og:app_id" content="1654538601469538">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_AU">
+
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
-  <link rel="stylesheet" type="text/css" href="//cloud.typography.com/757928/720728/css/fonts.css" />  <?php print $scripts; ?>
-    <meta name="google-site-verification" content="YUkBK5SsZ1H_6KXBxvDG3Ap94YNpBZgqYrf9fNP30c0" />
+ 
 </head>
 <body<?php print $attributes;?>>
 <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '1654538601469538',
-        xfbml      : true,
-        version    : 'v2.5',
-        status     : false,
-      });
-    };
-    (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_AU/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
- </script>
- <script>
-  window.twttr = (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-    if (d.getElementById(id)) return t;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js, fjs);
-    t._e = [];
-    t.ready = function(f) {
-      t._e.push(f);
-    };
-    return t;
-  }(document, "script", "twitter-wjs"));
+<script src="/js/jquery.gray.min.js"></script>
 </script>
   <?php print $page_top; ?>
   <?php print $page; ?>

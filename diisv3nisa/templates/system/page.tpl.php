@@ -70,8 +70,6 @@
  * @see omega_preprocess_page()
  */
 
-$is_caretaker = FALSE;
-
 ?>
 <div class="l-page">
   <header class="l-header" role="banner">
@@ -85,39 +83,18 @@ $is_caretaker = FALSE;
       </div>
     </div>
     <div class="l-branding">
-      <h1 class="element-invisible">National Innovation and Science Agenda</h1>
+      <h1 class="element-invisible">Department of Industry, Innovation and Science</h1>
       <div class="site-logos">
         <div class="left-logo">
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
-            <img src="<?php print base_path() . path_to_theme() . '/images/logo-australian-government.svg' ?>" alt="<?php print t('Home'); ?>" />
-          </a>
+         <h1>Department of Industry, Innovation and Science</h1>
         </div>
         <div class="right-logo">
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
-            <img src="<?php print base_path() . path_to_theme() . '/images/logo-nisa.svg' ?>" alt="National Innvoation and Science Agenda" />
+            <img src="<?php print base_path() . path_to_theme() . '/images/crest-inline-black.png' ?>" alt="Department of Industry, Innovation and Science" />
           </a>
         </div>
       </div>
-      <!--<?php if ($is_caretaker) : ?>
-        <div class="headings caretaker">
-          <h1>The National Innovation and Science Agenda</h1>
-          <h2>The Government is now in Caretaker</h2>
-          <p>We are in the caretaker period. This website is hosted by the Department of Industry, Innovation and Science and will only be updated with material in line with the <a href="https://www.dpmc.gov.au/sites/default/files/publications/guidance-caretaker-conventions-2016_0.pdf" title="Guidance on Caretaker Conventions">Caretaker Conventions</a>.</p>
-        </div>
-        <?php else : ?>
-        <?php if($is_front): ?>
-          <div class="headings">
-           
-            <h1 class="first">Welcome to the ideas boom</h1>
-             
-              <h1>$1.1B in initiatives over four years</h1>
-              </div>
-           <?php else : ?>
-              <div class="noheadings">
-              </div>
-            <?php endif ?> 
-          
-        <?php endif ?>-->
+   
       </div>
     <?php print render($page['header']); ?>
     <?php print render($page['menu']); ?>
@@ -135,45 +112,60 @@ $is_caretaker = FALSE;
       <?php print $feed_icons; ?>
     </div>
   </div>
+  
+
+
+
   <footer class="l-footer" role="contentinfo">
     <div class="left-column">
+     
       <div class="social-media">
         <h2 class="element-invisible">Follow us</h2>
         <div class="account-list">
-          <div class="facebook">
-            <a href="https://www.facebook.com/IdeasBoomAu" title="Folllow us on Facebook">Follow us on Facebook</a>
-          </div>
+         
           <div class="twitter">
-            <a href="https://www.twitter.com/IdeasBoomAu" title="Follow us on Twitter">Follow us on Twitter</a>
+            <a href="http://twitter.com/IndustryGovAu" title="Follow us on Twitter">Follow us on Twitter</a>
           </div>
+          
           <div class="youtube">
-            <a href="http://www.innovation.gov.au/youtube" title="Follow us on YouTube">Follow us on Youtube</a>
+            <a href="http://www.youtube.com/InnovationGovAu" title="Follow us on YouTube">Follow us on Youtube</a>
           </div>
-          <div class="instagram">
-            <a href="https://www.instagram.com/innovationscienceau/" title="Follow us on Instagram">Follow us on Instagram</a>
-          </div>
+       
           <div class="linkedin">
-            <a href="https://www.linkedin.com/company/national-innovation-and-science-agenda" title="Follow us on LinkedIn">Follow us on LinkedIn</a>
+            <a href="http://www.linkedin.com/company/department-of-innovation-industry-science-and-research" title="Follow us on LinkedIn">Follow us on LinkedIn</a>
           </div>
+          
           <div class="contact">
             <a class="mobile" href="tel:132846" title="Contact us">Contact us</a>
-            <a class="desktop" href="/page/media-and-contacts" title="Contact us">Contact us</a>
+            <a class="desktop" href="contact-us" title="Contact us">Contact us</a>
           </div>
+        
         </div>
       </div>
-      <div class="footer-menu">
-        <?php $footer_block = module_invoke('menu', 'block_view', 'menu-footer'); ?>
-        <?php print render($footer_block['content']); ?>
       </div>
-      <div class="copyright">
-        <?php $copyright_block = module_invoke('copyright_block', 'block_view', 'copyright_block'); ?>
-        <?php print render($copyright_block['content']); ?>
-      </div>
-    </div>    
+ 
     <div class="right-column">
       <div class="footer-image"></div>
-    </div>
-    <p class="rap">The department acknowledges the traditional owners of the country throughout Australia and their continuing connection to land, sea and community. We pay our respect to them and their cultures and to the elders past and present.</p> 
+    </div>    
+
+      <div class="aboutus">
+        <?php $block = module_invoke('menu_block', 'block_view', '1'); print render($block['content']); ?>
+      </div>
+      
+
+      <div class="departmentsites">
+        <?php $block = module_invoke('menu_block', 'block_view', '3'); print render($block['content']); ?>
+      </div>
+
+        <div class="siteinfo">
+        <?php $block = module_invoke('menu_block', 'block_view', '2'); print render($block['content']); ?>
+      </div>
+
+
+   
+<div class="rap">
+  <?php $block = module_invoke('block', 'block_view', '1'); print render($block['content']); ?>
+</div>
   </footer>
   <img class="print-only" src="<?php print base_path() . path_to_theme() . '/images/print-footer.png' ?>" alt="<?php print t('Home'); ?>" />
 </div>

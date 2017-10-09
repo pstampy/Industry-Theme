@@ -1,283 +1,286 @@
 // Alternate home page
-
 .l-page {
-	@include padding(null);
-}
-.front .top-wrapper {
-	@include margin(null);
-	@extend %bright-yellow;
-	padding-bottom: 0;
-	padding-top: 0;
-}
-.top-wrapper {
-	@include margin(null);
-	padding-top: 0;
-}
-.front .top h1 {
-	text-align: center;
-}
-.top-row-wrapper {
-	@include clearfix;
-}
-.section-about .top-row-wrapper {
-	margin-bottom: $vert-spacing-unit;
-	@include padding(null $horz-spacing-unit);
-}
-$menu-colours: (
-		29: $grapefruit, 
-		28: $pink,
-		25: $yellow,
-		27: $bright-green,
-		26: $blue,
-		3055: $bright-yellow
-		);
-	@each $tid, $color in $menu-colours {
-		.page-taxonomy-term-#{$tid} .top-wrapper, .page-node-#{$tid} .pane-crumbs-breadcrumb:before {
-			border-bottom: rem(4) solid #{$color};
-		}
-	}
-.left-top {
-	@include span(full);
-	@include margin(null null $vert-spacing-unit / 2 null);
-}
-.right-top {
-	@include span(full);
-}
-.not-front .center-wrapper {
-	@include clearfix;
-	.pane-video-slideshow-slick-slideshow {
-		@extend %bright-pink;
-		@include margin(null null 0.6rem null);
-		h2 {
-			text-align: center;
-		}
-	}
-}
-.section-audience .middle {
-	h1 {
-		@include padding(null $horz-white-spacing-unit $vert-spacing-unit);
-	}
-}
-.front .pane-menus .views-row {
-	a {
-		text-decoration: none;
-		display: block;
-		@include padding($horz-spacing-unit/2.3 $horz-spacing-unit/2);
-		@include transition(all 0.2s ease-in-out);
-		h2 {
-			margin-bottom: 0.5rem;
-			margin-top: 0;
-			line-height: $base-font-size * 1.2;
-			text-decoration: underline;
-		}
-		p {
-			margin-bottom: 0;
-			line-height: $base-font-size * 1.4;
-			font-weight: 400;
-		}
-		&:active,
-		&:hover {
-			background-color: $lightish-grey;
-		}
-	}
-}
-$theme-colour: (
-	5: $grapefruit,
-	3: $pink,
-	1: $yellow,
-	4: $bright-green,
-	2: $blue
-	);
-@each $tid, $color in $theme-colour {
-	.front .pane-menus .views-row-#{$tid} {
-		border-left: 0.8rem solid #{$color};
-	}
-	.page-taxonomy-term-#{$tid} .middle:before, .page-node-#{$tid} .pane-crumbs-breadcrumb:before {
-		content: '';
-		border-bottom: 3px solid #{$color};
-	}
+  @include padding(null);
 }
 
-.front .agenda {
-	text-align: center;
-	@include padding($vert-spacing-unit $horz-white-spacing-unit);
-	clear: both;
-	ul {
-		@include clearfix;
-		@include no-bullets;
-		@include padding(0);
-		display: flex;
-		justify-content: center;
-		text-align: center;
-		li {
-			@include margin(0 0.2em);
-			@include padding(0.2em);
-			align-items: center;
-			background-color: $bright-yellow;
-			border-radius: 40px;
-			display: flex;
-			flex: 0 0 80px;
-			float: left;
-			font-family: $heading-font-family;
-			font-size: $base-font-size * 1.6;
-			font-weight: bold;
-			height: 80px;
-			justify-content: center;
-			line-height: 1;
-			width: 80px;
-		}
-	}
+.front .top-wrapper {
+  @include margin(null);
+  @extend %bright-yellow;
+  padding-bottom: 0;
+  padding-top: 0;
 }
+
+.top-wrapper {
+  @include margin(null);
+  padding-top: 0;
+}
+
+.front .top h1 {
+  text-align: center;
+}
+
+.top-row-wrapper {
+  @include clearfix;
+}
+
+.left-top {
+  @include span(full);
+  @include margin(null null $vert-spacing-unit / 2 null);
+}
+
+.right-top {
+  @include span(full);
+}
+
+
 .sidebar-wrapper {
-	@include clearfix;
-	clear: both;
-	@include margin(null);
+  @include clearfix;
+  clear: both;
+  @include margin(null);
 }
-.section-theme .sidebar-wrapper, .section-audience .sidebar-wrapper {
-	@include padding(0);
+
+.section-theme .sidebar-wrapper,
+.section-audience .sidebar-wrapper {
+  @include padding(0);
 }
+
 .section-audience .center-wrapper {
-	.pane-page-title, .pane-term-description {
-		@include padding(null $horz-white-spacing-unit);
-		h1 {
-			@include padding($vert-spacing-unit null);
-		}
-	}
+  .pane-page-title,
+  .pane-term-description {
+    @include padding(null $horz-white-spacing-unit);
+    h1 {
+      @include padding($vert-spacing-unit null);
+    }
+  }
 }
-.right-column, .left-sidebar, .page-node-1136 .pane-node-content {
-	@include padding($vert-spacing-unit $horz-white-spacing-unit null);
-	h1 {
-		padding-bottom: $vert-spacing-unit;
-	}
+
+.right-column,
+.left-sidebar,
+.page-node-1136 .pane-node-content {
+  @include padding($vert-spacing-unit $horz-white-spacing-unit null);
+  h1 {
+    padding-bottom: $vert-spacing-unit;
+  }
 }
+
 .section-content .middle {
-	@include padding($vert-spacing-unit $horz-white-spacing-unit);
+  @include padding($vert-spacing-unit $horz-white-spacing-unit);
 }
+
 .bottom-wrapper {
-	@include clearfix;
-	.pane-right-video {
-		@extend %bright-pink;
-		@include margin(null null 0.6rem null);
-		position: relative;
-		h2 {
-			text-align: center;
-		}
-	}
-	.pane-video-slideshow-slick-slideshow {
-		@extend %bright-pink;
-		@include margin(null null 0.6rem null);
-		position: relative;
-	}
-	.pane
-	.page-node &,
-	.page-content &,
-	.page-search & {
-		.main-menu {
-			display: none;
-			visibility: hidden;
-			@extend %bright-yellow;
-			@include margin(null null 0.6rem null);
-			h2 {
-				text-align: left;
-				text-transform: uppercase;
-			}
-		}
-	}
-	.page-taxonomy & {
-		display: block;
-	}
+  @include clearfix;
+  .pane-right-video {
+    @extend %bright-pink;
+    @include margin(null null 0.6rem null);
+    position: relative;
+    h2 {
+      text-align: center;
+    }
+  }
+  .pane-video-slideshow-slick-slideshow {
+    @extend %bright-pink;
+    @include margin(null null 0.6rem null);
+    position: relative;
+  }
+  .pane .page-node &,
+  .page-content &,
+  .page-search & {
+    .main-menu {
+      display: none;
+      visibility: hidden;
+      @extend %bright-yellow;
+      @include margin(null null 0.6rem null);
+      h2 {
+        text-align: left;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .page-taxonomy & {
+    display: block;
+  }
 }
 
 .sub-bottom-wrapper {
-	@include clearfix;
-	@include margin(null);
+  @include clearfix;
+  @include margin(null);
 }
+
+
+.quad-box {
+  padding: 0 $horz-spacing-unit;
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+    .need-to-know {
+      @include border-color(red green blue);
+      @include border-style(solid);
+      @include border-width(2px);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 1em;
+      margin-bottom: 2em;
+      flex: 0 1 100%;
+      padding-bottom: $horz-spacing-unit;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-self: flex-end;
+
+      .button {
+        align-self: flex-end;
+        text-align: center;
+        width: 100%;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+
 
 @include breakpoint(tablet) {
-	.left-top {
-		@include margin(0);
-		@include span(first $desk-cols / 2 of $desk-cols);
-	}
-	.right-top {
-		@include span(last $desk-cols / 2 of $desk-cols);
-	}
-	.front .agenda {
-		h2, p {
-			padding-bottom: $small-spacing;
-		}
-		ul {
-			li {
-				flex: 0 0 100px;
-				border-radius: 50px;
-				height: 100px;
-				width: 100px;
-				font-size: $base-font-size * 2;
-			}
-		}
-	}
+  .left-top {
+    @include margin(0);
+    @include span(first $desk-cols / 2 of $desk-cols);
+  }
+  .right-top {
+    @include span(last $desk-cols / 2 of $desk-cols);
+  }
+  .front .agenda {
+    h2,
+    p {
+      padding-bottom: $small-spacing;
+    }
+    ul {
+      li {
+        flex: 0 0 100px;
+        border-radius: 50px;
+        height: 100px;
+        width: 100px;
+        font-size: $base-font-size * 2;
+      }
+    }
+  }
 
-	.page-node-1136 .center-wrapper .pane-node-content{
-		width: percentage(3/4);
-		text-align: center;
-		margin: 0 auto;
-	}
-	.section-audience .right-column {
-		padding-top: 5.8rem;
-	}
+  .page-node-1136 .center-wrapper .pane-node-content {
+    width: percentage(3/4);
+    text-align: center;
+    margin: 0 auto;
+  }
+  .section-audience .right-column {
+    padding-top: 5.8rem;
+  }
+
+  .quad-box {
+    padding: 0 $horz-spacing-unit;
+    .view-content {
+      display: flex;
+      flex-wrap: wrap;
+      /*justify-content: space-between;*/
+      justify-content: center;
+      .need-to-know {
+        margin: 0.5em;
+        flex: 0 1 45%;
+        padding-bottom: $horz-spacing-unit;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .button {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
 }
-@include breakpoint(desktop) {
-	.not-front .center-wrapper, .front .pane-2, .section-about .top-row-wrapper,  .not-front .middle, .section-about .pane-1 {
-		@include padding(0);	
-	}
-	
-	.sidebar-wrapper {
-		@include clearfix;
-		.bottom-left {
-			@include span(first $desk-cols / 2 of $desk-cols);
-			border-right: $horz-spacing-unit / 4 $white solid;
-		}
-		.bottom-right {
-			@include span(last $desk-cols / 2 of $desk-cols);
-		}
-	}
-	.sidebar-wrapper {
-		background-color: $dark-white;
-	}
-	.section-audience .middle h1, .left-sidebar, .right-column, 
-	.section-audience .center-wrapper .pane-page-title, .section-audience .center-wrapper .pane-term-description {
-		padding-left: 0;
-		padding-right: 0;
-	}	
 
-	.section-audience .middle .cs-title h1{
-		margin-top:1em;
-	}
-	$theme-icons: (
-		29: investors, 
-		28: research-universities, 
-		25: startups-entrepreneurs, 
-		27: young-australians, 
-		26: business,
-		3055: agenda
-		);
-	@each $tid, $icon in $theme-icons {
-		.page-taxonomy-term-#{$tid} .middle:before, .page-node-#{$tid} .pane-crumbs-breadcrumb:before {
-			height: 300px;
-		}
-	}
-	$theme-colour: (
-		5: $grapefruit,
-		3: $pink,
-		1: $yellow,
-		4: $bright-green,
-		2: $blue
-		);
-	@each $tid, $color in $theme-colour {
-		.front .pane-menus .views-row-#{$tid} {
-			height: 250px;
-		}
-		.front .pane-menus .views-row-1 {
-			height: 499px;
-		}
-	}
+@include breakpoint(desktop) {
+  .not-front .center-wrapper,
+  .front .pane-2,
+  .section-about .top-row-wrapper,
+  .not-front .middle,
+  .section-about .pane-1 {
+    @include padding(0);
+  }
+
+  .sidebar-wrapper {
+    @include clearfix;
+    .bottom-left {
+      @include span(first $desk-cols / 2 of $desk-cols);
+      border-right: $horz-spacing-unit / 4 $white solid;
+    }
+    .bottom-right {
+      @include span(last $desk-cols / 2 of $desk-cols);
+    }
+  }
+  .sidebar-wrapper {
+    background-color: $dark-white;
+  }
+  .section-audience .middle h1,
+  .left-sidebar,
+  .right-column,
+  .section-audience .center-wrapper .pane-page-title,
+  .section-audience .center-wrapper .pane-term-description {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section-audience .middle .cs-title h1 {
+    margin-top: 1em;
+  }
+  $theme-icons: ( 29: investors,
+  28: research-universities,
+  25: startups-entrepreneurs,
+  27: young-australians,
+  26: business,
+  3055: agenda);
+  @each $tid,
+  $icon in $theme-icons {
+    .page-taxonomy-term-#{$tid} .middle:before,
+    .page-node-#{$tid} .pane-crumbs-breadcrumb:before {
+      height: 300px;
+    }
+  }
+  $theme-colour: ( 5: $grapefruit,
+  3: $pink,
+  1: $yellow,
+  4: $bright-green,
+  2: $blue);
+  @each $tid,
+  $color in $theme-colour {
+    .front .pane-menus .views-row-#{$tid} {
+      height: 250px;
+    }
+    .front .pane-menus .views-row-1 {
+      height: 499px;
+    }
+  }
+
+  .quad-box {
+    padding: 0 $horz-spacing-unit;
+    .view-content {
+      display: flex;
+      flex-wrap: wrap;
+      /*justify-content: space-between;*/
+      justify-content: center;
+      .need-to-know {
+        flex: 0 1 30%;
+        padding-bottom: $horz-spacing-unit;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        &:hover,
+        &:focus {
+          background-color: shade($action-color, 20%);
+          color: #fff;
+        }
+        .button {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
 }

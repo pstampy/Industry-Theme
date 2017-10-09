@@ -94,26 +94,10 @@ $is_caretaker = FALSE;
         </div>
         <div class="right-logo">
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
-            <img src="<?php print base_path() . path_to_theme() . '/images/logo-nisa.svg' ?>" alt="National Innvoation and Science Agenda" />
+            <img src="<?php print base_path() . path_to_theme() . '/images/logo-nisa.svg' ?>" alt="Department of Industry, Innovation and Science" />
           </a>
         </div>
       </div>
-      <!--<?php if ($is_caretaker) : ?>
-        <div class="headings caretaker">
-          <h1>The National Innovation and Science Agenda</h1>
-          <h2>The Government is now in Caretaker</h2>
-          <p>We are in the caretaker period. This website is hosted by the Department of Industry, Innovation and Science and will only be updated with material in line with the <a href="https://www.dpmc.gov.au/sites/default/files/publications/guidance-caretaker-conventions-2016_0.pdf" title="Guidance on Caretaker Conventions">Caretaker Conventions</a>.</p>
-        </div>
-        <?php else : ?>
-          <div class="headings">
-            <?php if($is_front): ?>
-              <h1 class="first">Welcome to the ideas boom</h1>
-              <h1 class="second">$1.1B in initiatives over four years</h1>
-            <?php else : ?>
-              <h1>Welcome to the ideas boom</h1>
-            <?php endif ?>
-          </div>
-        <?php endif ?>-->
     </div>
     <?php print render($page['header']); ?>
     <?php print render($page['menu']); ?>
@@ -130,7 +114,7 @@ $is_caretaker = FALSE;
         <div class="top-wrapper">
           
           <div class="top">
-            <?php $main_menu_block = module_invoke('menu_block', 'block_view', '1'); ?>
+            <?php $main_menu_block = module_invoke('menu_block', 'block_view', 'block-superfish-1'); ?>
             <?php print render($main_menu_block['content']); ?>
             
           </div>

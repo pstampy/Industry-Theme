@@ -1,43 +1,77 @@
 // Footer
-
 .l-footer {
-	@extend %dark-mid-grey;
-	@include clearfix;
-	font-size: $base-font-size * 1.6;
-	line-height: $base-font-size * 1.6;
-	margin-bottom: 0;
-	text-align: center;
-	.footer-image {
-		@include background(url('../images/nisa_logo_footer.png'));
-		@include filter(brightness(150%));
-		@include margin(null null $vert-spacing-unit / 2 null);
-		background-position: center;
-		background-repeat: no-repeat;
-		height: 53px;
-	}
-	.copyright {
-		@include margin($vert-spacing-unit / 2 null null);
-	}
-	.rap {
-		clear: both;
-		padding: 10px 0;
-		font-size: $base-font-size * 0.9;
-	}
+  @extend %dark-mid-grey;
+  @include clearfix;
+  font-size: $base-font-size * 1.6;
+  line-height: $base-font-size * 1.6;
+  margin-bottom: 0;
+  text-align: center;
+  .footer-image {
+    @include background(url('../images/logo-australian-government.svg'));
+    @include filter(brightness(20%));
+    @include margin(null null $vert-spacing-unit / 2 null);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 53px;
+   
+  }
+  .aboutus, .departmentsites, .siteinfo {
+    background-color: $corporate-secondary-4;
+    clear: both;
+    margin-bottom: 3em;
+    ul li {
+      list-style-image: none;
+      list-style-type: none;
+      text-align: center;
+      a {
+        color: $white;
+        font-weight: bolder;
+        text-decoration: none;
+        margin:8px;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .rap {
+    clear: both;
+    text-align: center;
+    padding: 10px 0;
+    font-size: $base-font-size * 0.9;
+  }
+}
+
+@include breakpoint(tablet) {
+
+  .aboutus ul, .departmentsites ul, .siteinfo ul{
+  	display: flex;
+  	flex-direction: row;
+  	flex-wrap: wrap;
+  	justify-content: space-between;
+
+
+  }
 }
 @include breakpoint(desktop) {
-	.l-footer {
-		text-align: left;
-		.left-column {
-			@include span(first $desk-cols / $desk-cols * 8 of $desk-cols);	
-		}
-		.right-column {
-			@include span(last $desk-cols / $desk-cols * 4 of $desk-cols);
-			@include padding(0);
-		}
-		.footer-image {
-			background-position: 90% center;
-			text-align: right;
-		}
-	}
-	
+  .l-footer {
+    text-align: left;
+    .left-column {
+      @include span(first $desk-cols / $desk-cols * 8 of $desk-cols);
+    }
+    .right-column {
+      @include span(last $desk-cols / $desk-cols * 4 of $desk-cols);
+      @include padding(0);
+    }
+    .footer-image {
+      background-position: 90% center;
+      text-align: right;
+    }
+  }
+
+
+
+
+
 }

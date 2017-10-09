@@ -57,7 +57,6 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
-  <link rel="stylesheet" type="text/css" href="//cloud.typography.com/757928/633648/css/fonts.css" />
   <?php print $scripts; ?>
 </head>
 <body>
