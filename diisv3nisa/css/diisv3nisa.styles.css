@@ -866,7 +866,8 @@ body {
           right: 0; }
 
 .admin {
-  padding-bottom: 5em; }
+  display: -ms-flexbox;
+  display: flex; }
 
 #superfish-2 a.sf-depth-2 {
   font-size: larger; }
