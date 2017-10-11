@@ -147,7 +147,7 @@ abbr,acronym {
 }
 
 ul,.block ul,.item-list ul {
-  list-style-type: square;
+  list-style-type: none;
   list-style-image: none;
   margin: 0.25em 0 0.25em 1.5em;/* LTR */
 }
@@ -157,7 +157,7 @@ ul,.block ul,.item-list ul {
 }
 
 .item-list ul li,li.leaf,ul.menu li {
-  list-style-type: disc;
+  list-style-type: none;
   list-style-image: none;
 }
 
@@ -172,12 +172,12 @@ ol {
 
 .item-list ul li.collapsed,ul.menu li.collapsed {
   list-style-image: url(/misc/menu-collapsed.png);
-  list-style-type: disc;
+  list-style-type: none;
 }
 
 .item-list ul li.expanded,ul.menu li.expanded {
   list-style-image: url(/misc/menu-expanded.png);
-  list-style-type: circle;
+  list-style-type:  none;
 }
 
 quote,code {
