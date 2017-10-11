@@ -4,7 +4,11 @@
 * Main page template.
 */
 ?>
+<div class="admin">
+       <?php $block = module_invoke('superfish', 'block_view', '2');
+print render($block['content']);?>
 
+  </div>
 <div id="branding" class="clearfix">
 
 	<?php print $breadcrumb; ?>
