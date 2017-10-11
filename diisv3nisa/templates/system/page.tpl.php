@@ -72,6 +72,11 @@
 
 ?>
 <div class="l-page">
+  <div class="admin">
+       <?php $block = module_invoke('superfish', 'block_view', '2');
+print render($block['content']);?>
+
+  </div>
   <header class="l-header" role="banner">
     <img class="print-only" src="<?php print base_path() . path_to_theme() . '/images/print-banner.png' ?>" alt="<?php print t('Home'); ?>" />
     <div class="l-top-bar">
