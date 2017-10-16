@@ -63,6 +63,14 @@
 <body<?php print $attributes;?>>
 <script>
 <script src="/js/jquery.gray.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    }); 
+});
+</script>
 </script>
   <?php print $page_top; ?>
   <?php print $page; ?>
