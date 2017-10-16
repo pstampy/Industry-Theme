@@ -66,8 +66,36 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script> 
 $(document).ready(function(){
-    $("#flip").click(function(){
-        $("#panel").slideToggle("slow");
+    $("#flip1").click(function(){
+        $("#panel1").slideToggle("slow");
+    }); 
+});
+</script>
+<script> 
+$(document).ready(function(){
+    $("#flip2").click(function(){
+        $("#panel2").slideToggle("slow");
+    }); 
+});
+</script>
+<script> 
+$(document).ready(function(){
+    $("#flip3").click(function(){
+        $("#panel3").slideToggle("slow");
+    }); 
+});
+</script>
+<script> 
+$(document).ready(function(){
+    $("#flip4").click(function(){
+        $("#panel4").slideToggle("slow");
+    }); 
+});
+</script>
+<script> 
+$(document).ready(function(){
+    $("#flip5").click(function(){
+        $("#panel5").slideToggle("slow");
     }); 
 });
 </script>
