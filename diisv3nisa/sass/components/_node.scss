@@ -1,28 +1,13 @@
 // Service links
 
-.panel, .flip {
+#panel1, #flip1, #panel2, #flip2,  #panel3, #flip3,  #panel4, #flip4,  #panel5, #flip5   {
     padding: 5px;
     text-align: center;
     background-color: #e5eecc;
     border: solid 1px #c3c3c3;
 }
 
-.panel {
+#panel1, #panel2, #panel3, #panel4, #panel5  {
     padding: 50px;
     display: none;
 }
-
-
-
-.panel2, .flip2 {
-    padding: 5px;
-    text-align: center;
-    background-color: #e5eecc;
-    border: solid 1px #c3c3c3;
-}
-
-.panel2 {
-    padding: 50px;
-    display: none;
-}
- 
