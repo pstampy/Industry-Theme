@@ -1,26 +1,15 @@
 // Service links
+.node--page{
 
-.page-node {
-	.services {
-		border-top: 1px solid $dark-white;
-		@include padding($vert-spacing-unit / 2 null null null);
-		@include margin($vert-spacing-unit 2 null null null);
-		h2 {
-			text-transform: uppercase;
-		}
-		a {
-			border: none;
-			display: inline-block;
-			width: em(35);
-			height: em(35);
-			opacity: 0.7;
-			@include transition(opacity $base-duration $base-timing, background-color $base-duration $base-timing);
-			&:hover {
-				@include background($white);
-				opacity: 1.0;
-			}
-		}
-	
-	}
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
 }
 
+#panel {
+    padding: 50px;
+    display: none;
+}
+} 
